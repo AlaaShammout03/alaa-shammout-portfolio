@@ -2,6 +2,7 @@ import Link from "next/link";
 import { siteConfig } from "@/data/site";
 
 const navItems = [
+  { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
   { label: "Skills", href: "/#skills" },
   { label: "About", href: "/#about" },
