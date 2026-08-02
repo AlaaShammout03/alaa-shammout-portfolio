@@ -4,11 +4,6 @@ import { Card } from "@/components/ui/card";
 import { LinkButton } from "@/components/ui/link-button";
 import { caseStudySlugs } from "@/data/case-studies";
 
-const statusLabels = {
-  "case-study-planned": "Case study",
-  "project-card": "Featured project",
-};
-
 type ProjectCardProps = {
   project: Project;
   featured?: boolean;
@@ -23,21 +18,16 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         featured ? "lg:col-span-2" : ""
       }`}
     >
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-        <div>
-          <p className="text-sm font-medium text-teal-700">{project.type}</p>
-          <h3 className="mt-2 text-xl font-semibold leading-7 text-slate-950">
-            {project.title}
-          </h3>
-          {project.role ? (
-            <p className="mt-2 text-sm font-medium text-slate-600">
-              Role: {project.role}
-            </p>
-          ) : null}
-        </div>
-        <Badge className="w-fit shrink-0 text-xs">
-          {statusLabels[project.status]}
-        </Badge>
+      <div>
+        <p className="text-sm font-medium text-teal-700">{project.type}</p>
+        <h3 className="mt-2 text-xl font-semibold leading-7 text-slate-950">
+          {project.title}
+        </h3>
+        {project.role ? (
+          <p className="mt-2 text-sm font-medium text-slate-600">
+            Role: {project.role}
+          </p>
+        ) : null}
       </div>
 
       <p className="mt-4 text-sm leading-6 text-slate-600">{project.summary}</p>

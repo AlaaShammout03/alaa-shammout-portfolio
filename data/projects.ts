@@ -6,7 +6,6 @@ export type Project = {
   summary: string;
   tech: string[];
   highlights: string[];
-  status: "case-study-planned" | "project-card";
   privacyNote?: string;
 };
 
@@ -28,7 +27,6 @@ export const projects: Project[] = [
       "AI/ML outputs",
     ],
     highlights: [],
-    status: "case-study-planned",
     privacyNote:
       "Private company-sponsored work for Emagine Solutions. Public portfolio content must use sanitized screenshots and omit private code, real tickets, charger identifiers, and API details.",
   },
@@ -48,7 +46,6 @@ export const projects: Project[] = [
       "Microsoft Azure",
     ],
     highlights: [],
-    status: "case-study-planned",
   },
   {
     slug: "csrnet-crowd-counting",
@@ -58,7 +55,6 @@ export const projects: Project[] = [
       "A PyTorch re-implementation of CSRNet for crowd counting on the ShanghaiTech dataset. Validation MAE wouldn't move for the first several epochs, and the loss looked deceptively small the whole time because the ground-truth density values themselves were tiny.",
     tech: ["Python", "PyTorch", "OpenCV", "NumPy", "pandas"],
     highlights: [],
-    status: "case-study-planned",
   },
   {
     slug: "freertos-esp32-escape-room-game",
@@ -78,7 +74,6 @@ export const projects: Project[] = [
       "Buzzer",
     ],
     highlights: [],
-    status: "case-study-planned",
   },
   {
     slug: "energy-efficient-wsn-node-selection",
@@ -92,6 +87,5 @@ export const projects: Project[] = [
       "Built simulation outputs for evaluating tradeoffs in IoT wireless sensor network deployments.",
       "Used plots and tabular metrics to make algorithm behavior easier to inspect.",
     ],
-    status: "project-card",
   },
 ];
