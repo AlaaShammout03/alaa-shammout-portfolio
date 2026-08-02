@@ -52,29 +52,28 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "urbanspace-booking-service",
     challenge:
-      "A shared urban-resource platform needs booking flows that are secure, consistent, and resistant to conflicts when multiple users try to reserve the same resource.",
+      "A booking microservice for a shared urban-resource platform needs to guarantee that a reservation slot can only be confirmed once, even when two requests for that slot arrive at nearly the same time.",
     outcome:
-      "The case study shows the backend design behind booking creation, active/history views, rescheduling, cancellation, validation rules, and PostgreSQL-backed conflict prevention.",
+      "The service enforces booking rules and slot exclusivity across eight REST endpoints, with conflict handling backed by PostgreSQL advisory locks after application-level checks alone proved insufficient, deployed to Azure App Service.",
     sections: [
       {
-        title: "Service responsibility",
+        title: "Role and scope",
         body: [
-          "The booking service handles the lifecycle of resource reservations for a smart urban resources platform.",
-          "It exposes REST API workflows for creating bookings, reading active and historical bookings, rescheduling reservations, and cancelling bookings.",
+          "I built one of four microservices for the platform, a four-person team project split by service ownership. My service handled the booking lifecycle: creating, rescheduling, cancelling, and viewing active and historical reservations, exposed over eight REST endpoints with JWT-scoped access.",
+          "Reservations were persisted in PostgreSQL through Spring Data JPA using Java 21 and Spring Boot. The service enforced duration limits, daily limits, and operating hours, checking hours by calling out over REST to a teammate's resource service rather than duplicating that data locally.",
         ],
       },
       {
-        title: "Validation and consistency",
+        title: "Finding the double booking",
         body: [
-          "The service validates operating hours, booking limits, request conflicts, and lifecycle transitions before persisting changes.",
-          "PostgreSQL advisory locking is used as part of the conflict-detection strategy so concurrent booking attempts can be handled consistently.",
+          "The application-level checks already caught interval overlaps: two requests with obviously conflicting times got rejected. During testing, I submitted two overlapping bookings for the same slot at nearly the same time, and both came back confirmed. Checking for conflicts in application code wasn't enough once two requests were actually racing each other.",
         ],
       },
       {
-        title: "Cloud/backend emphasis",
+        title: "Moving conflict handling into the database",
         body: [
-          "The project highlights Java, Spring Boot, Spring Data JPA, PostgreSQL, JWT-secured API design, and Microsoft Azure deployment readiness.",
-          "The portfolio case study should include API and lifecycle diagrams instead of screenshots that do not add technical signal.",
+          "Fixing it meant conflict handling couldn't live entirely at the application layer. I added a PostgreSQL advisory lock on the slot being booked, so the database itself serializes competing attempts on the same slot instead of relying on two separate request handlers to agree.",
+          "The tradeoff is that two requests for the same slot can no longer be processed in parallel: one has to wait for the other to resolve before it can proceed.",
         ],
       },
     ],
