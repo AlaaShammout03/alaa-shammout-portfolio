@@ -83,6 +83,41 @@ export const caseStudies: CaseStudy[] = [
       "Small endpoint summary table with sanitized example route names.",
     ],
   },
+  {
+    slug: "csrnet-crowd-counting",
+    challenge:
+      "A PyTorch re-implementation of CSRNet needed to learn per-pixel crowd density on the ShanghaiTech dataset, but early training showed a validation MAE that wasn't moving, with a loss that looked deceptively small from the first epoch.",
+    outcome:
+      "After tracing the flat loss to a scale mismatch between predictions and the tiny ground-truth density values, the retrained model reached a test MAE of 18.01 on Part B and 106.11 on Part A, ahead of 2 of the 4 published baselines it was compared against.",
+    sections: [
+      {
+        title: "Tracing the flat loss",
+        body: [
+          "Validation MAE wasn't moving across epochs, and the loss printed as suspiciously small from epoch 1, consistently around 1e-4. The model clearly wasn't predicting correctly, so I visualized the predicted density maps and they came back almost blank, near zero everywhere.",
+          "Checking the actual ground-truth density values explained why: they were around 0.05 per pixel. The loss looked small only because the targets were tiny, not because the model had learned anything. The fix, rescaling density values by 100x along with gradient clipping, was the first thing tried once the root cause was clear, and it resolved the issue directly.",
+        ],
+      },
+      {
+        title: "Choosing a learning rate schedule",
+        body: [
+          "The first schedule I tried was ReduceLROnPlateau, which lowers the learning rate automatically once validation loss stops improving, the more adaptive-seeming option. But the Part A validation set is only 60 images, so a handful of noisy images could swing the aggregate metric enough to trigger a reduction too early, killing the learning rate before the model had actually plateaued.",
+          "I switched to StepLR with a fixed decay every 30 epochs instead. It ignores validation noise and decays on a set schedule, which mattered more here than reacting adaptively to a metric that wasn't reliable at that sample size.",
+        ],
+      },
+      {
+        title: "Results and where it's weakest",
+        body: [
+          "Using geometry-adaptive k-NN density maps as ground truth, the retrained model reached a test MAE of 18.01 on ShanghaiTech Part B and 106.11 on Part A, ahead of 2 of the 4 published baselines it was compared against.",
+          "A per-bucket breakdown by scene density showed where it's weakest: sparse scenes in Part B had 9.1% relative error, higher than denser scenes in the same set.",
+        ],
+      },
+    ],
+    visualPlan: [
+      "Predicted density maps before and after the rescaling fix, next to ground truth.",
+      "Loss curve comparison across the ReduceLROnPlateau and StepLR runs.",
+      "Per-bucket relative error chart by scene density.",
+    ],
+  },
 ];
 
 export const caseStudySlugs = caseStudies.map((caseStudy) => caseStudy.slug);

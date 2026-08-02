@@ -70,7 +70,7 @@ export const projects: Project[] = [
       "Applied density rescaling for training stability and evaluated results using MAE/RMSE.",
       "Analyzed performance across density buckets to understand model behavior beyond aggregate metrics.",
     ],
-    status: "project-card",
+    status: "case-study-planned",
   },
   {
     slug: "freertos-esp32-escape-room-game",
