@@ -94,7 +94,7 @@ export const projects: Project[] = [
       "Used mutex-protected shared state to keep hardware-facing behavior predictable.",
       "Modeled a complete embedded interaction loop with LCD, keypad, joystick, LEDs, and buzzer feedback.",
     ],
-    status: "project-card",
+    status: "case-study-planned",
   },
   {
     slug: "energy-efficient-wsn-node-selection",

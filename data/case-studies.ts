@@ -118,6 +118,34 @@ export const caseStudies: CaseStudy[] = [
       "Per-bucket relative error chart by scene density.",
     ],
   },
+  {
+    slug: "freertos-esp32-escape-room-game",
+    challenge:
+      "A three-stage escape-room game on ESP32 needed its input, game logic, and display code running as independent, differently-timed tasks, all reading and writing the same shared game state, score, timer, and game status, without corrupting it.",
+    outcome:
+      "The game runs as three FreeRTOS tasks, logic at 20ms, input at 30ms, and display at 100ms, synchronized through a single mutex over the shared game state, with the full three-stage state machine validated in the Wokwi simulator.",
+    sections: [
+      {
+        title: "Role and scope",
+        body: [
+          "I worked on a three-stage escape-room game running on ESP32, built in C with FreeRTOS, ESP-IDF, and PlatformIO as part of a three-person team. The game drives a 4x4 keypad, analog joystick, and slide potentiometer for input, RGB LEDs and a buzzer for feedback, and a 20x4 I2C LCD for the display, spanning ADC, GPIO, PWM, and I2C.",
+          "The game runs as three periodic FreeRTOS tasks: input at 30ms, game logic at 20ms, and the LCD display at 100ms. All three tasks read and write the same shared game state on every cycle.",
+        ],
+      },
+      {
+        title: "Sharing state across three tasks",
+        body: [
+          "With three tasks touching the same handful of values every cycle, the design had to account for concurrent access from the start. We used a single mutex over the whole shared game-state block rather than splitting it into separate locks per field, since it was the simplest option that was still correct and kept the locking logic easy to reason about across input, logic, and display code.",
+          "The tradeoff is that a single mutex serializes all access to shared state, not just the parts that actually conflict: if the display task is reading the timer while the logic task wants to update the score, one still has to wait for the other, even though they're touching different fields.",
+        ],
+      },
+    ],
+    visualPlan: [
+      "Task diagram showing the three FreeRTOS tasks, their periods, and the shared game-state mutex.",
+      "Photo or diagram of the physical build: keypad, joystick, potentiometer, LCD, LEDs, and buzzer wired to the ESP32.",
+      "State-machine diagram of the three-stage puzzle progression.",
+    ],
+  },
 ];
 
 export const caseStudySlugs = caseStudies.map((caseStudy) => caseStudy.slug);
