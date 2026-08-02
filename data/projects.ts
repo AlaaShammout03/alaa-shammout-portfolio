@@ -14,7 +14,7 @@ export const projects: Project[] = [
   {
     slug: "ev-charging-support-platform",
     title: "EV Charging Support Platform",
-    type: "Company-sponsored senior design project",
+    type: "Industry-sponsored capstone for Emagine Solutions",
     role: "Lead Frontend Developer",
     summary:
       "Customer-facing support app and operator dashboard for EV charging workflows, ticket reporting, charger monitoring, telemetry views, AI-assisted ticket classification, predictive maintenance alerts, and route assistance.",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     ],
     status: "case-study-planned",
     privacyNote:
-      "Private company-sponsored work. Public portfolio content must use sanitized screenshots and omit private code, sponsor data, real tickets, charger identifiers, and API details.",
+      "Private company-sponsored work for Emagine Solutions. Public portfolio content must use sanitized screenshots and omit private code, real tickets, charger identifiers, and API details.",
   },
   {
     slug: "urbanspace-booking-service",

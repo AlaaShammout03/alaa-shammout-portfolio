@@ -17,29 +17,26 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "ev-charging-support-platform",
     challenge:
-      "EV charging support requires customer-facing reporting, operator triage, charger visibility, telemetry review, route assistance, and AI/ML outputs to work together without exposing private operational data.",
+      "The EV charging capstone for Emagine Solutions needed two separate React frontends built as one coherent product: a customer portal for reporting charging problems, and an internal operator dashboard for triaging tickets and monitoring live charger telemetry, both integrated against the same FastAPI and PostgreSQL backend.",
     outcome:
-      "The public case study focuses on the product workflows, frontend leadership, API integration work, and sanitized system design rather than private source code or sponsor-specific details.",
+      "As Lead Frontend Developer, I built both apps across more than 80 REST endpoints with JWT and OTP authentication, covering AI-assisted ticket triage, predictive maintenance alerts, a fleet incident mode, and a Smart Route feature for drivers, working from weekly technical reviews with Emagine's software lead.",
     sections: [
       {
         title: "Role and scope",
         body: [
-          "I worked as Lead Frontend Developer on the company-sponsored senior design project.",
-          "My focus was building the customer-facing support experience and operator dashboard flows that made ticket reporting, charger monitoring, telemetry review, AI-assisted triage, and route assistance usable from the browser.",
+          "I was Lead Frontend Developer on an industry-sponsored capstone for Emagine Solutions, a four-person team project running from September 2025 to May 2026 with weekly technical reviews with their software lead. I built two React and Tailwind CSS apps, a customer portal and an operator dashboard, integrated against a FastAPI and PostgreSQL backend across more than 80 REST endpoints with JWT and OTP authentication.",
         ],
       },
       {
-        title: "Technical approach",
+        title: "The operator dashboard",
         body: [
-          "The frontend was built with React and Tailwind CSS and integrated REST APIs backed by FastAPI and PostgreSQL-backed services.",
-          "The UI was structured around clear support workflows: report a charging issue, review ticket context, inspect charger state, view telemetry, surface AI/ML outputs, and support route-assistance decisions through Mapbox Directions API integration.",
+          "The operator dashboard runs on live IoT telemetry from the charging network, surfacing AI-classified tickets with confidence scores, predictive maintenance alerts, and a fleet incident mode that triggers on threshold breach.",
         ],
       },
       {
-        title: "Public-safe presentation",
+        title: "Smart Route",
         body: [
-          "Because the project was company-sponsored, the portfolio should not include private repository links, real tickets, charger identifiers, exact API shapes, customer data, sponsor-only architecture details, or production telemetry.",
-          "Screenshots and diagrams should be sanitized before publishing and should use generic labels, blurred or sample data, and public-safe workflow descriptions.",
+          "The Smart Route feature uses the Mapbox Directions API to route drivers to underused chargers based on live traffic, showing drive, wait, and charge time estimates for each option. Points-based incentives are tied to the recommendation to help shift demand away from congested stations.",
         ],
       },
     ],
