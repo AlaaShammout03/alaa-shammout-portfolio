@@ -42,19 +42,21 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
 
       <p className="mt-4 text-sm leading-6 text-slate-600">{project.summary}</p>
 
-      <div className="mt-5">
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-          Technical highlights
-        </p>
-        <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
-          {project.highlights.map((highlight) => (
-            <li key={highlight} className="flex gap-2">
-              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
-              <span>{highlight}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+      {project.highlights.length > 0 ? (
+        <div className="mt-5">
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Technical highlights
+          </p>
+          <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
+            {project.highlights.map((highlight) => (
+              <li key={highlight} className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+                <span>{highlight}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
 
       <div className="mt-5 flex flex-wrap gap-2">
         {project.tech.map((tech) => (

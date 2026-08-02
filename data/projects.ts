@@ -17,7 +17,7 @@ export const projects: Project[] = [
     type: "Industry-sponsored capstone for Emagine Solutions",
     role: "Lead Frontend Developer",
     summary:
-      "Customer-facing support app and operator dashboard for EV charging workflows, ticket reporting, charger monitoring, telemetry views, AI-assisted ticket classification, predictive maintenance alerts, and route assistance.",
+      "A customer portal and operator dashboard for an EV charging network, built as frontend lead on a four-person capstone for Emagine Solutions. The dashboard had to turn live charger telemetry and AI-classified tickets into something an operator could act on immediately, including a fleet incident mode that fires on threshold breach.",
     tech: [
       "React",
       "Tailwind CSS",
@@ -27,11 +27,7 @@ export const projects: Project[] = [
       "Mapbox Directions API",
       "AI/ML outputs",
     ],
-    highlights: [
-      "Built the frontend and dashboard workflows around customer support, monitoring, and operator triage.",
-      "Integrated REST API flows for ticket data, charger status, telemetry views, route assistance, and AI/ML outputs.",
-      "Structured as a sanitized case study because the source code and sponsor details are private.",
-    ],
+    highlights: [],
     status: "case-study-planned",
     privacyNote:
       "Private company-sponsored work for Emagine Solutions. Public portfolio content must use sanitized screenshots and omit private code, real tickets, charger identifiers, and API details.",
@@ -41,7 +37,7 @@ export const projects: Project[] = [
     title: "UrbanSpace Booking Service",
     type: "Cloud/backend project",
     summary:
-      "Spring Boot booking microservice for a smart urban resources platform with booking creation, history, rescheduling, cancellation, validation rules, conflict detection, and PostgreSQL advisory locking.",
+      "A Spring Boot booking microservice for a shared urban-resource platform, one of four services in a four-person team project. Two overlapping bookings for the same slot both got confirmed during testing, which meant application-level checks alone weren't enough to stop a double booking.",
     tech: [
       "Java",
       "Spring Boot",
@@ -51,11 +47,7 @@ export const projects: Project[] = [
       "JWT",
       "Microsoft Azure",
     ],
-    highlights: [
-      "Designed REST endpoints for active bookings, booking history, rescheduling, and cancellation workflows.",
-      "Implemented operating-hours validation, booking limits, conflict detection, and PostgreSQL advisory locking.",
-      "Prepared for cloud deployment with Azure and PostgreSQL-backed persistence.",
-    ],
+    highlights: [],
     status: "case-study-planned",
   },
   {
@@ -63,13 +55,9 @@ export const projects: Project[] = [
     title: "CSRNet Crowd Counting",
     type: "AI / Computer Vision project",
     summary:
-      "PyTorch CSRNet reimplementation for single-image crowd counting on the ShanghaiTech dataset, evaluated with MAE/RMSE and density-bucket error analysis.",
+      "A PyTorch re-implementation of CSRNet for crowd counting on the ShanghaiTech dataset. Validation MAE wouldn't move for the first several epochs, and the loss looked deceptively small the whole time because the ground-truth density values themselves were tiny.",
     tech: ["Python", "PyTorch", "OpenCV", "NumPy", "pandas"],
-    highlights: [
-      "Re-implemented CSRNet for crowd-count estimation from single images.",
-      "Applied density rescaling for training stability and evaluated results using MAE/RMSE.",
-      "Analyzed performance across density buckets to understand model behavior beyond aggregate metrics.",
-    ],
+    highlights: [],
     status: "case-study-planned",
   },
   {
@@ -77,7 +65,7 @@ export const projects: Project[] = [
     title: "FreeRTOS ESP32 Escape Room Game",
     type: "Embedded systems project",
     summary:
-      "Multi-stage embedded escape room game using FreeRTOS tasks, mutex-protected shared state, input handling, game logic, display updates, and hardware feedback.",
+      "A three-stage escape-room game on ESP32, built in C with FreeRTOS as part of a three-person team. All three tasks touch the same score, timer, and game status every cycle, coordinated through a single mutex chosen for simplicity over splitting the state into separate locks.",
     tech: [
       "C/C++",
       "FreeRTOS",
@@ -89,11 +77,7 @@ export const projects: Project[] = [
       "RGB LEDs",
       "Buzzer",
     ],
-    highlights: [
-      "Coordinated concurrent tasks for input, game logic, display updates, and output feedback.",
-      "Used mutex-protected shared state to keep hardware-facing behavior predictable.",
-      "Modeled a complete embedded interaction loop with LCD, keypad, joystick, LEDs, and buzzer feedback.",
-    ],
+    highlights: [],
     status: "case-study-planned",
   },
   {
