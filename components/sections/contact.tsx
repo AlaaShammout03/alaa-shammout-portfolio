@@ -25,13 +25,13 @@ export function Contact() {
     <SectionShell
       id="contact"
       eyebrow="Contact"
-      title="Next step for hiring conversations"
+      title="Get in touch"
     >
       <Card className="p-6">
         <p className="max-w-2xl text-base leading-7 text-slate-600">
           The fastest way to reach me is by email. GitHub and LinkedIn are
-          included for recruiters who want to review code, project context, and
-          professional background.
+          included to review code, project context, and professional
+          background.
         </p>
         <div className="mt-6 divide-y divide-slate-200 border-y border-slate-200">
           {contactItems.map((item) => (

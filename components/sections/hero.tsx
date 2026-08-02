@@ -24,8 +24,8 @@ export function Hero() {
             {siteConfig.positioning}
           </p>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-            A public portfolio for recruiters and hiring teams to review
-            selected software, embedded, AI, and simulation projects.
+            A public portfolio of selected software, embedded, AI, and
+            simulation projects.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <LinkButton href="#projects" className="sm:w-fit">
@@ -48,10 +48,6 @@ export function Hero() {
         <aside className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm shadow-slate-950/[0.03]">
           <p className="text-sm font-semibold text-slate-950">
             Portfolio focus
-          </p>
-          <p className="mt-2 text-sm leading-6 text-slate-600">
-            A concise view of project work across software, hardware-facing
-            systems, and applied AI.
           </p>
           <div className="mt-5 grid gap-2">
             {focusAreas.map((area) => (

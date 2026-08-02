@@ -13,11 +13,6 @@ export function About() {
           Sharjah. My work spans web applications, backend services, embedded
           systems, AI/computer vision, and engineering simulations.
         </p>
-        <p>
-          This portfolio is structured to show how each project was built, what
-          role I played, which technologies were used, and what can be shared
-          publicly without exposing private or company-sensitive details.
-        </p>
       </div>
     </SectionShell>
   );

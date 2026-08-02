@@ -8,14 +8,13 @@ export function Resume() {
     <SectionShell
       id="resume"
       eyebrow="Resume"
-      title="Fast access for recruiters"
+      title="Download the resume"
       tone="white"
     >
       <Card className="p-6">
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Recruiters can download a current PDF resume directly from the site,
-          then use the contact links below to review GitHub, LinkedIn, or send a
-          message.
+          Download a current PDF resume directly from the site, then use the
+          contact links below to review GitHub, LinkedIn, or send a message.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <LinkButton href={siteConfig.resumeUrl} download>

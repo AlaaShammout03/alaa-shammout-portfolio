@@ -11,9 +11,8 @@ export function FeaturedProjects() {
     >
       <div className="space-y-6">
         <p className="max-w-3xl text-base leading-7 text-slate-600">
-          These cards summarize the work recruiters should scan first. Dedicated
-          case study pages are available for the strongest long-form projects,
-          with public-safe visuals still to be added later.
+          Dedicated case study pages are available for the strongest
+          long-form projects.
         </p>
         <div className="grid gap-4 lg:grid-cols-2">
           {projects.map((project, index) => (

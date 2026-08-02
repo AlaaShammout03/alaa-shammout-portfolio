@@ -68,8 +68,8 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         </p>
       ) : null}
 
-      <div className="mt-auto pt-5">
-        {hasCaseStudy ? (
+      {hasCaseStudy ? (
+        <div className="mt-auto pt-5">
           <LinkButton
             href={`/projects/${project.slug}`}
             variant="secondary"
@@ -77,12 +77,8 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           >
             Read case study
           </LinkButton>
-        ) : (
-          <p className="text-sm font-medium text-slate-500">
-            Dedicated page planned for a later phase.
-          </p>
-        )}
-      </div>
+        </div>
+      ) : null}
     </Card>
   );
 }

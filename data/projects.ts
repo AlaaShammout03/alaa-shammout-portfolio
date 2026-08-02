@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "AI/ML outputs",
     ],
     highlights: [
-      "Built recruiter-visible frontend and dashboard workflows around customer support, monitoring, and operator triage.",
+      "Built the frontend and dashboard workflows around customer support, monitoring, and operator triage.",
       "Integrated REST API flows for ticket data, charger status, telemetry views, route assistance, and AI/ML outputs.",
       "Structured as a sanitized case study because the source code and sponsor details are private.",
     ],
