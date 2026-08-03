@@ -89,7 +89,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline decoration-teal-700/40 underline-offset-4 transition hover:text-teal-800 hover:decoration-teal-800"
+                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline decoration-teal-700/40 underline-offset-4 transition hover:text-teal-900 hover:decoration-2 hover:decoration-teal-900"
                   >
                     {project.repoLabel ?? "View source"}
                     <span aria-hidden="true">&#8599;</span>
