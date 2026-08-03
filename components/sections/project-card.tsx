@@ -61,7 +61,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
       ) : null}
 
       {hasCaseStudy || project.repoUrl ? (
-        <div className="mt-auto flex flex-wrap gap-3 pt-5">
+        <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-3 pt-5">
           {hasCaseStudy ? (
             <LinkButton
               href={`/projects/${project.slug}`}
@@ -72,15 +72,15 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
             </LinkButton>
           ) : null}
           {project.repoUrl ? (
-            <LinkButton
+            <a
               href={project.repoUrl}
-              variant="ghost"
-              className="w-full sm:w-fit"
               target="_blank"
               rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 underline decoration-teal-700/40 underline-offset-4 transition hover:text-teal-800 hover:decoration-teal-800"
             >
               {project.repoLabel ?? "View source"}
-            </LinkButton>
+              <span aria-hidden="true">&#8599;</span>
+            </a>
           ) : null}
         </div>
       ) : null}
