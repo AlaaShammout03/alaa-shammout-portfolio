@@ -85,13 +85,9 @@ export const projects: Project[] = [
     title: "Energy-Efficient WSN Node Selection",
     type: "Wireless networks / IoT simulation project",
     summary:
-      "Python simulation for energy-efficient active node selection in IoT-based wireless sensor networks, comparing a proposed heuristic with random and grid deployment strategies.",
+      "A greedy node-selection heuristic for IoT wireless sensor networks, built with two other students for a Wireless and Mobile Networks course. Grid deployment, the obvious baseline, had zero sink connectivity at low node counts in testing, which is exactly what the heuristic's hard connectivity gate was built to rule out.",
     tech: ["Python", "NumPy", "pandas", "Matplotlib", "Google Colab"],
-    highlights: [
-      "Compared node-selection strategies using coverage, redundancy, energy, active node count, and connectivity metrics.",
-      "Built simulation outputs for evaluating tradeoffs in IoT wireless sensor network deployments.",
-      "Used plots and tabular metrics to make algorithm behavior easier to inspect.",
-    ],
+    highlights: [],
     repoUrl:
       "https://github.com/AlaaShammout03/energy-efficient-wsn-node-selection",
   },
