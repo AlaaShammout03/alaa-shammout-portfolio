@@ -10,7 +10,7 @@ export function Footer() {
         </div>
         <div className="flex flex-col gap-2 md:items-end">
           <p className="max-w-md text-left md:text-right">
-            Full-stack, embedded, cloud, and AI-powered systems.
+            {siteConfig.positioning}
           </p>
           <div className="flex flex-wrap gap-3">
             <a
