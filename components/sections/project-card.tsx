@@ -76,7 +76,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 underline decoration-teal-700/40 underline-offset-4 transition hover:text-teal-900 hover:decoration-2 hover:decoration-teal-900"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2"
             >
               {project.repoLabel ?? "View source"}
               <span aria-hidden="true">&#8599;</span>
