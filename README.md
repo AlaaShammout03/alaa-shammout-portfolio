@@ -1,4 +1,4 @@
-# Alaa Shammout — Portfolio
+# Alaa Shammout Portfolio
 
 Personal portfolio showcasing full-stack, embedded, and AI projects, built from React and Spring Boot to FreeRTOS on bare ESP32 hardware.
 
