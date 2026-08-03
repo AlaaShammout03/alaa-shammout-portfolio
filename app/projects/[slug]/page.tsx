@@ -121,12 +121,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       <dd className="mt-1 text-slate-600">{project.role}</dd>
                     </div>
                   ) : null}
-                  <div>
-                    <dt className="font-semibold text-slate-950">Status</dt>
-                    <dd className="mt-1 text-slate-600">
-                      Public-safe portfolio case study
-                    </dd>
-                  </div>
                 </dl>
               </aside>
             </div>
