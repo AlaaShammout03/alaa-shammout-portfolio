@@ -16,7 +16,7 @@ export function Footer() {
           <div className="flex flex-wrap gap-3">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="font-medium text-slate-700 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="font-medium text-slate-700 transition hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               Email
             </a>
@@ -24,7 +24,7 @@ export function Footer() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-slate-700 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="font-medium text-slate-700 transition hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               GitHub
             </a>
@@ -32,7 +32,7 @@ export function Footer() {
               href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-slate-700 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="font-medium text-slate-700 transition hover:text-teal-700 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               LinkedIn
             </a>

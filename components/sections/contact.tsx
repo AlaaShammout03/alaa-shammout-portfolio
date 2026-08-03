@@ -40,12 +40,12 @@ export function Contact() {
               href={item.href}
               target={item.href.startsWith("mailto:") ? undefined : "_blank"}
               rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
-              className="flex flex-col gap-1 py-3 transition hover:text-teal-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+              className="group flex flex-col gap-1 py-3 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
             >
-              <span className="text-sm font-semibold text-slate-950">
+              <span className="text-sm font-semibold text-slate-950 transition group-hover:text-teal-800 group-hover:underline">
                 {item.label}
               </span>
-              <span className="text-right text-sm text-slate-600">
+              <span className="text-right text-sm text-slate-600 transition group-hover:text-teal-800">
                 {item.value}
               </span>
             </a>
