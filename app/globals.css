@@ -39,6 +39,12 @@ a {
   text-decoration: none;
 }
 
+a[href],
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
 ::selection {
   background: rgba(15, 118, 110, 0.18);
 }
