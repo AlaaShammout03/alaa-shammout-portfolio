@@ -6,6 +6,8 @@ export type Project = {
   summary: string;
   tech: string[];
   highlights: string[];
+  repoUrl?: string;
+  repoLabel?: string;
   privacyNote?: string;
 };
 
@@ -46,6 +48,7 @@ export const projects: Project[] = [
       "Microsoft Azure",
     ],
     highlights: [],
+    repoUrl: "https://github.com/AlaaShammout03/urbanspace-booking-service",
   },
   {
     slug: "csrnet-crowd-counting",
@@ -55,6 +58,7 @@ export const projects: Project[] = [
       "A PyTorch re-implementation of CSRNet for crowd counting on the ShanghaiTech dataset. Validation MAE wouldn't move for the first several epochs, and the loss looked deceptively small the whole time because the ground-truth density values themselves were tiny.",
     tech: ["Python", "PyTorch", "OpenCV", "NumPy", "pandas"],
     highlights: [],
+    repoUrl: "https://github.com/AlaaShammout03/Computer-Vision-Project",
   },
   {
     slug: "freertos-esp32-escape-room-game",
@@ -74,6 +78,7 @@ export const projects: Project[] = [
       "Buzzer",
     ],
     highlights: [],
+    repoUrl: "https://github.com/AlaaShammout03/Embedded-Systems-Project",
   },
   {
     slug: "energy-efficient-wsn-node-selection",
@@ -87,5 +92,7 @@ export const projects: Project[] = [
       "Built simulation outputs for evaluating tradeoffs in IoT wireless sensor network deployments.",
       "Used plots and tabular metrics to make algorithm behavior easier to inspect.",
     ],
+    repoUrl:
+      "https://github.com/AlaaShammout03/energy-efficient-wsn-node-selection",
   },
 ];

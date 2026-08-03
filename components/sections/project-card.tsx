@@ -60,15 +60,28 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
         </p>
       ) : null}
 
-      {hasCaseStudy ? (
-        <div className="mt-auto pt-5">
-          <LinkButton
-            href={`/projects/${project.slug}`}
-            variant="secondary"
-            className="w-full sm:w-fit"
-          >
-            Read case study
-          </LinkButton>
+      {hasCaseStudy || project.repoUrl ? (
+        <div className="mt-auto flex flex-wrap gap-3 pt-5">
+          {hasCaseStudy ? (
+            <LinkButton
+              href={`/projects/${project.slug}`}
+              variant="secondary"
+              className="w-full sm:w-fit"
+            >
+              Read case study
+            </LinkButton>
+          ) : null}
+          {project.repoUrl ? (
+            <LinkButton
+              href={project.repoUrl}
+              variant="ghost"
+              className="w-full sm:w-fit"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.repoLabel ?? "View source"}
+            </LinkButton>
+          ) : null}
         </div>
       ) : null}
     </Card>

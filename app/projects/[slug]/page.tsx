@@ -72,9 +72,21 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <main>
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
-            <LinkButton href="/#projects" variant="ghost" className="-ml-5">
-              Back to projects
-            </LinkButton>
+            <div className="flex flex-wrap items-center gap-2">
+              <LinkButton href="/#projects" variant="ghost" className="-ml-5">
+                Back to projects
+              </LinkButton>
+              {project.repoUrl ? (
+                <LinkButton
+                  href={project.repoUrl}
+                  variant="ghost"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {project.repoLabel ?? "View source"}
+                </LinkButton>
+              ) : null}
+            </div>
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
