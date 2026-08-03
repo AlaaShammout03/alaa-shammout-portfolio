@@ -143,6 +143,40 @@ export const caseStudies: CaseStudy[] = [
       "State-machine diagram of the three-stage puzzle progression.",
     ],
   },
+  {
+    slug: "energy-efficient-wsn-node-selection",
+    challenge:
+      "IoT wireless sensor networks need enough active nodes to cover a monitoring field, but activating every candidate node wastes energy and creates redundant overlapping coverage. The simple baselines fail in different ways: in this team's own simulation, grid deployment had zero sink connectivity at 16 and 25 candidate nodes, and random deployment's redundancy kept climbing as node density increased.",
+    outcome:
+      "A three-person team built a greedy node-selection heuristic that scores each candidate node on coverage gain, redundancy, and energy cost, gated by a hard sink-connectivity requirement, then prunes the selected set afterward. Tested against random and grid deployment across 16 to 64 candidate nodes, it ranked first overall at every density. At 64 nodes it reached 95.2% coverage using an average of 15.3 active nodes, against 64 for both baselines.",
+    sections: [
+      {
+        title: "Role and scope",
+        body: [
+          "I was one of three people on this Wireless and Mobile Networks team project. My contributions were the Python-based simulation, helping implement the node selection heuristic, evaluating coverage, redundancy, energy consumption, active node count, and sink connectivity, running the trials across multiple node counts, and contributing to the result analysis, visualization, and the final IEEE-style report. Most of it was worked on together rather than split into separately owned pieces.",
+        ],
+      },
+      {
+        title: "The heuristic",
+        body: [
+          "The scheme evaluates every unselected candidate node at each step and picks the highest-scoring feasible one, repeating until the field reaches 95% coverage or no feasible candidates are left. A node is only feasible if it preserves connectivity to the sink: if it doesn't, its score is forced to zero regardless of how much coverage it would add. After the greedy pass, the algorithm tries removing each selected node one at a time and keeps it removed if coverage and connectivity still hold without it.",
+          "The score weights coverage, redundancy, and energy cost at 0.60, 0.25, and 0.15. We took those from the literature review rather than tuning them ourselves, tested them, and found they held up as reliable fixed values, so we kept them rather than optimizing further. We also didn't compare against metaheuristics like PSO or Grey Wolf Optimization that show up in related work: they need meaningfully more compute than a lightweight greedy heuristic, which was the point of this approach. Extending the comparison to those is future work.",
+        ],
+      },
+      {
+        title: "Results",
+        body: [
+          "Tested against random and grid deployment across 16 to 64 candidate nodes with 20 trials each, the proposed method ranked first overall at every density tested. The gap widens with more candidates: at 64 nodes it reached 95.2% coverage with an average of 15.3 active nodes, against 64 for both baselines, cutting redundancy from 3.922 to 0.456 and energy from 0.0254 J to 0.0062 J.",
+          "At the lowest density tested, 16 candidate nodes, it's a genuinely mixed result: coverage was actually the lowest of the three methods (57.8%, against 76.2% for random and 80.0% for grid), and energy use was higher than either baseline. It still ranked first because it was the only method with full sink connectivity at that density, grid scored zero connectivity there. With few candidates to choose from, the heuristic couldn't be both well-covered and connected without paying for it elsewhere.",
+        ],
+      },
+    ],
+    visualPlan: [
+      "Coverage, redundancy, energy, and active-node-count line charts across the five tested node counts, already generated in the repo.",
+      "System model diagram showing the monitoring field, sink position, and heterogeneous sensing ranges.",
+      "Summary table matching the report: coverage, redundancy, energy, active nodes, and connectivity per method.",
+    ],
+  },
 ];
 
 export const caseStudySlugs = caseStudies.map((caseStudy) => caseStudy.slug);
