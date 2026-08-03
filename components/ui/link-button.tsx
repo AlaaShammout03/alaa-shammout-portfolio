@@ -11,7 +11,7 @@ const variants = {
     "bg-teal-700 text-white shadow-sm shadow-teal-950/10 hover:bg-teal-800",
   secondary:
     "border border-slate-300 bg-white text-slate-950 hover:border-slate-400 hover:bg-slate-50",
-  ghost: "text-slate-700 hover:bg-slate-100 hover:text-slate-950",
+  ghost: "text-slate-700 hover:text-teal-800 hover:underline",
 };
 
 export function LinkButton({
