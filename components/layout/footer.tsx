@@ -13,10 +13,10 @@ export function Footer() {
             Computer Engineering, American University of Sharjah. Based in
             Dubai.
           </p>
-          <div className="flex flex-wrap gap-3">
+          <div className="-mr-3 flex flex-wrap gap-1">
             <a
               href={`mailto:${siteConfig.email}`}
-              className="font-medium text-slate-700 transition hover:text-teal-800 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="rounded-md px-3 py-2 font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               Email
             </a>
@@ -24,7 +24,7 @@ export function Footer() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-slate-700 transition hover:text-teal-800 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="rounded-md px-3 py-2 font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               GitHub
             </a>
@@ -32,7 +32,7 @@ export function Footer() {
               href={siteConfig.linkedinUrl}
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-slate-700 transition hover:text-teal-800 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+              className="rounded-md px-3 py-2 font-medium text-slate-700 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
             >
               LinkedIn
             </a>
