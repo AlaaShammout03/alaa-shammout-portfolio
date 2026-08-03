@@ -32,7 +32,7 @@ export const projects: Project[] = [
   },
   {
     slug: "urbanspace-booking-service",
-    title: "UrbanSpace Booking Service",
+    title: "Cloud-Native Booking Microservice",
     type: "Cloud/backend project",
     summary:
       "A Spring Boot booking microservice for a shared urban-resource platform, one of four services in a four-person team project. Two overlapping bookings for the same slot both got confirmed during testing, which meant application-level checks alone weren't enough to stop a double booking.",
