@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Badge } from "@/components/ui/badge";
-import { LinkButton } from "@/components/ui/link-button";
 import {
   caseStudySlugs,
   getCaseStudy,
@@ -72,19 +72,29 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <main>
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
-            <div className="flex flex-wrap items-center gap-2">
-              <LinkButton href="/#projects" variant="ghost" className="-ml-5">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-slate-200 pb-6 text-sm">
+              <Link
+                href="/#projects"
+                className="inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950"
+              >
+                <span aria-hidden="true">&larr;</span>
                 Back to projects
-              </LinkButton>
+              </Link>
               {project.repoUrl ? (
-                <LinkButton
-                  href={project.repoUrl}
-                  variant="ghost"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {project.repoLabel ?? "View source"}
-                </LinkButton>
+                <>
+                  <span className="text-slate-300" aria-hidden="true">
+                    |
+                  </span>
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline decoration-teal-700/40 underline-offset-4 transition hover:text-teal-800 hover:decoration-teal-800"
+                  >
+                    {project.repoLabel ?? "View source"}
+                    <span aria-hidden="true">&#8599;</span>
+                  </a>
+                </>
               ) : null}
             </div>
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
