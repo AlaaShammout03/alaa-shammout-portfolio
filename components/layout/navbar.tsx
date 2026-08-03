@@ -4,8 +4,6 @@ import { siteConfig } from "@/data/site";
 const navItems = [
   { label: "Experience", href: "/#experience" },
   { label: "Projects", href: "/#projects" },
-  { label: "Skills", href: "/#skills" },
-  { label: "About", href: "/#about" },
   { label: "Resume", href: "/#resume" },
   { label: "Contact", href: "/#contact" },
 ];
@@ -33,24 +31,6 @@ export function Navbar() {
               {item.label}
             </Link>
           ))}
-          <a
-            href={siteConfig.githubUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="whitespace-nowrap rounded-md px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            aria-label="Open Alaa Shammout GitHub profile"
-          >
-            GitHub
-          </a>
-          <a
-            href={siteConfig.linkedinUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="whitespace-nowrap rounded-md px-3 py-2 text-slate-600 transition hover:bg-slate-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
-            aria-label="Open Alaa Shammout LinkedIn profile"
-          >
-            LinkedIn
-          </a>
         </nav>
       </div>
     </header>
