@@ -1,5 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionShell } from "@/components/ui/section-shell";
 
 const skillGroups = [
@@ -30,17 +31,19 @@ export function Skills() {
       tone="white"
     >
       <div className="grid gap-4 sm:grid-cols-2">
-        {skillGroups.map((group) => (
-          <Card key={group.title}>
-            <h3 className="text-base font-semibold text-slate-950">
-              {group.title}
-            </h3>
-            <div className="mt-4 flex flex-wrap gap-2">
-              {group.items.map((item) => (
-                <Badge key={item}>{item}</Badge>
-              ))}
-            </div>
-          </Card>
+        {skillGroups.map((group, index) => (
+          <Reveal key={group.title} delayMs={Math.min(index * 60, 240)}>
+            <Card>
+              <h3 className="text-base font-semibold text-slate-950">
+                {group.title}
+              </h3>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <Badge key={item}>{item}</Badge>
+                ))}
+              </div>
+            </Card>
+          </Reveal>
         ))}
       </div>
     </SectionShell>

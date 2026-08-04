@@ -6,18 +6,13 @@ import { caseStudySlugs } from "@/data/case-studies";
 
 type ProjectCardProps = {
   project: Project;
-  featured?: boolean;
 };
 
-export function ProjectCard({ project, featured = false }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
   const hasCaseStudy = caseStudySlugs.includes(project.slug);
 
   return (
-    <Card
-      className={`flex h-full flex-col ${
-        featured ? "lg:col-span-2" : ""
-      }`}
-    >
+    <Card className="flex h-full flex-col transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-950/10">
       <div>
         <p className="text-sm font-medium text-teal-700">{project.type}</p>
         <h3 className="mt-2 break-words text-xl font-semibold leading-7 text-slate-950">

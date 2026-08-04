@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Reveal } from "@/components/ui/reveal";
 
 type SectionShellProps = {
   id: string;
@@ -22,7 +23,7 @@ export function SectionShell({
         tone === "white" ? "bg-white" : "bg-slate-50"
       }`}
     >
-      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-6 sm:py-16 lg:grid-cols-[280px_1fr] lg:gap-12 lg:py-20">
+      <Reveal className="mx-auto grid max-w-6xl gap-8 px-5 py-14 sm:px-6 sm:py-16 lg:grid-cols-[280px_1fr] lg:gap-12 lg:py-20">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
             {eyebrow}
@@ -32,7 +33,7 @@ export function SectionShell({
           </h2>
         </div>
         <div>{children}</div>
-      </div>
+      </Reveal>
     </section>
   );
 }

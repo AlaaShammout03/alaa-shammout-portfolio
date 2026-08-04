@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Badge } from "@/components/ui/badge";
+import { Reveal } from "@/components/ui/reveal";
 import {
   caseStudySlugs,
   getCaseStudy,
@@ -75,7 +76,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-slate-200 pb-6 text-sm">
               <Link
                 href="/#projects"
-                className="inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                className="link-underline inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
               >
                 <span aria-hidden="true">&larr;</span>
                 Back to projects
@@ -89,7 +90,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                    className="link-underline inline-flex items-center gap-1.5 font-medium text-teal-700 transition hover:text-teal-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
                   >
                     {project.repoLabel ?? "View source"}
                     <span aria-hidden="true">&#8599;</span>
@@ -98,7 +99,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ) : null}
             </div>
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
-              <div>
+              <Reveal>
                 <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                   Case study
                 </p>
@@ -108,7 +109,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700 md:text-lg md:leading-8">
                   {project.summary}
                 </p>
-              </div>
+              </Reveal>
               <aside className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm shadow-slate-950/[0.03]">
                 <dl className="space-y-4 text-sm">
                   <div>
@@ -129,30 +130,41 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         <section className="border-b border-slate-200 bg-slate-50">
           <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
-            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]">
+            <Reveal
+              as="article"
+              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
+            >
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                 Challenge
               </p>
               <p className="mt-3 text-base leading-7 text-slate-700">
                 {caseStudy.challenge}
               </p>
-            </article>
-            <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]">
+            </Reveal>
+            <Reveal
+              as="article"
+              delayMs={60}
+              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
+            >
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                 Outcome
               </p>
               <p className="mt-3 text-base leading-7 text-slate-700">
                 {caseStudy.outcome}
               </p>
-            </article>
+            </Reveal>
           </div>
         </section>
 
         <section className="bg-white">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1fr_320px] lg:py-16">
             <div className="space-y-10">
-              {caseStudy.sections.map((section) => (
-                <section key={section.title}>
+              {caseStudy.sections.map((section, index) => (
+                <Reveal
+                  key={section.title}
+                  as="section"
+                  delayMs={Math.min(index * 60, 240)}
+                >
                   <h2 className="text-2xl font-semibold text-slate-950">
                     {section.title}
                   </h2>
@@ -161,7 +173,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
-                </section>
+                </Reveal>
               ))}
             </div>
 

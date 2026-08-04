@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/sections/project-card";
+import { Reveal } from "@/components/ui/reveal";
 import { SectionShell } from "@/components/ui/section-shell";
 import { projects } from "@/data/projects";
 
@@ -16,11 +17,13 @@ export function FeaturedProjects() {
         </p>
         <div className="grid gap-4 lg:grid-cols-2">
           {projects.map((project, index) => (
-            <ProjectCard
+            <Reveal
               key={project.slug}
-              project={project}
-              featured={index === 0}
-            />
+              delayMs={Math.min(index * 60, 240)}
+              className={index === 0 ? "lg:col-span-2" : undefined}
+            >
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
       </div>
