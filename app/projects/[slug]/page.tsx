@@ -105,7 +105,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <h1 className="mt-4 max-w-3xl break-words text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
                   {project.title}
                 </h1>
-                <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
+                <p className="mt-5 max-w-3xl text-base leading-7 text-slate-700 md:text-lg md:leading-8">
                   {project.summary}
                 </p>
               </div>

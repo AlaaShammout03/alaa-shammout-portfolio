@@ -11,7 +11,7 @@ const navItems = [
 export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-3 sm:px-6 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-2 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-3 md:py-3">
         <Link
           href="/#home"
           className="w-fit rounded-md text-base font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
