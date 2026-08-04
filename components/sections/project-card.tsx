@@ -20,7 +20,7 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
     >
       <div>
         <p className="text-sm font-medium text-teal-700">{project.type}</p>
-        <h3 className="mt-2 text-xl font-semibold leading-7 text-slate-950">
+        <h3 className="mt-2 break-words text-xl font-semibold leading-7 text-slate-950">
           {project.title}
         </h3>
         {project.role ? (
@@ -40,7 +40,10 @@ export function ProjectCard({ project, featured = false }: ProjectCardProps) {
           <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
             {project.highlights.map((highlight) => (
               <li key={highlight} className="flex gap-2">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+                <span
+                  className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700"
+                  aria-hidden="true"
+                />
                 <span>{highlight}</span>
               </li>
             ))}

@@ -18,7 +18,7 @@ export function Resume() {
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
           <LinkButton href={siteConfig.resumeUrl} download>
-            Download Resume
+            Download resume
           </LinkButton>
           <LinkButton href="#contact" variant="secondary">
             Go to Contact
