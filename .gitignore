@@ -44,3 +44,7 @@ next-env.d.ts
 
 # local-only Claude Code skills
 .claude/skills/portfolio-voice/
+
+# Claude Code local state
+.claude/
+skills-lock.json
