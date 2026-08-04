@@ -69,13 +69,13 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-950">
       <Navbar />
-      <main>
+      <main id="main">
         <section className="border-b border-slate-200 bg-white">
           <div className="mx-auto max-w-6xl px-5 py-12 sm:px-6 sm:py-16">
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-slate-200 pb-6 text-sm">
               <Link
                 href="/#projects"
-                className="inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950"
+                className="inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
               >
                 <span aria-hidden="true">&larr;</span>
                 Back to projects
@@ -89,7 +89,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2"
+                    className="inline-flex items-center gap-1.5 font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
                   >
                     {project.repoLabel ?? "View source"}
                     <span aria-hidden="true">&#8599;</span>
@@ -102,7 +102,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                   Case study
                 </p>
-                <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
+                <h1 className="mt-4 max-w-3xl break-words text-4xl font-semibold leading-tight text-slate-950 sm:text-5xl">
                   {project.title}
                 </h1>
                 <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
@@ -184,7 +184,10 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
                   {caseStudy.visualPlan.map((visual) => (
                     <li key={visual} className="flex gap-2">
-                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700" />
+                      <span
+                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700"
+                        aria-hidden="true"
+                      />
                       <span>{visual}</span>
                     </li>
                   ))}
