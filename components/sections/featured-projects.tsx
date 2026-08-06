@@ -9,6 +9,7 @@ export function FeaturedProjects() {
       id="projects"
       eyebrow="Featured work"
       title="Selected projects across software, embedded systems, AI, and simulation"
+      stickyHeading
     >
       <div className="grid gap-4 lg:grid-cols-2">
         {projects.map((project, index) => (
