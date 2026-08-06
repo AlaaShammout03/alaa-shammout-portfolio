@@ -19,7 +19,6 @@ export type CaseStudy = {
   challenge: string;
   outcome: string;
   sections: CaseStudySection[];
-  visualPlan: string[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -85,10 +84,6 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    visualPlan: [
-      "Workflow diagram showing customer report to operator triage to resolution.",
-      "High-level architecture diagram using generic service names only.",
-    ],
   },
   {
     slug: "urbanspace-booking-service",
@@ -117,11 +112,6 @@ export const caseStudies: CaseStudy[] = [
           "The tradeoff is that two requests for the same slot can no longer be processed in parallel: one has to wait for the other to resolve before it can proceed.",
         ],
       },
-    ],
-    visualPlan: [
-      "Booking lifecycle diagram for create, reschedule, cancel, active, and history flows.",
-      "High-level service diagram showing API layer, validation, persistence, and PostgreSQL locking.",
-      "Small endpoint summary table with sanitized example route names.",
     ],
   },
   {
@@ -153,11 +143,6 @@ export const caseStudies: CaseStudy[] = [
         ],
       },
     ],
-    visualPlan: [
-      "Predicted density maps before and after the rescaling fix, next to ground truth.",
-      "Loss curve comparison across the ReduceLROnPlateau and StepLR runs.",
-      "Per-bucket relative error chart by scene density.",
-    ],
   },
   {
     slug: "freertos-esp32-escape-room-game",
@@ -180,11 +165,6 @@ export const caseStudies: CaseStudy[] = [
           "The tradeoff is that a single mutex serializes all access to shared state, not just the parts that actually conflict: if the display task is reading the timer while the logic task wants to update the score, one still has to wait for the other, even though they're touching different fields.",
         ],
       },
-    ],
-    visualPlan: [
-      "Task diagram showing the three FreeRTOS tasks, their periods, and the shared game-state mutex.",
-      "Photo or diagram of the physical build: keypad, joystick, potentiometer, LCD, LEDs, and buzzer wired to the ESP32.",
-      "State-machine diagram of the three-stage puzzle progression.",
     ],
   },
   {
@@ -214,11 +194,6 @@ export const caseStudies: CaseStudy[] = [
           "At the lowest density tested, 16 candidate nodes, it's a genuinely mixed result: coverage was actually the lowest of the three methods (57.8%, against 76.2% for random and 80.0% for grid), and energy use was higher than either baseline. It still ranked first because it was the only method with full sink connectivity at that density, grid scored zero connectivity there. With few candidates to choose from, the heuristic couldn't be both well-covered and connected without paying for it elsewhere.",
         ],
       },
-    ],
-    visualPlan: [
-      "Coverage, redundancy, energy, and active-node-count line charts across the five tested node counts, already generated in the repo.",
-      "System model diagram showing the monitoring field, sink position, and heterogeneous sensing ranges.",
-      "Summary table matching the report: coverage, redundancy, energy, active nodes, and connectivity per method.",
     ],
   },
 ];

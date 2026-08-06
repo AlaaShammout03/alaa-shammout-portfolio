@@ -210,23 +210,6 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 </div>
               </div>
 
-              <div>
-                <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-500">
-                  Visuals to add
-                </h2>
-                <ul className="mt-4 space-y-3 text-sm leading-6 text-slate-600">
-                  {caseStudy.visualPlan.map((visual) => (
-                    <li key={visual} className="flex gap-2">
-                      <span
-                        className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-700"
-                        aria-hidden="true"
-                      />
-                      <span>{visual}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
               {project.privacyNote ? (
                 <div className="rounded-lg border border-teal-200 bg-teal-50 p-5">
                   <h2 className="text-sm font-semibold text-teal-950">
