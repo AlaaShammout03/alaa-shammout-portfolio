@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
 import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/ui/reveal";
+import { ZoomableImage } from "@/components/ui/zoomable-image";
 import {
   caseStudySlugs,
   getCaseStudy,
@@ -100,7 +100,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               ) : null}
             </div>
             <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_320px] lg:items-start">
-              <Reveal>
+              <Reveal durationMs={400} distancePx={20}>
                 <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                   Case study
                 </p>
@@ -133,6 +133,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           <div className="mx-auto grid max-w-6xl gap-6 px-5 py-12 sm:px-6 lg:grid-cols-2 lg:py-16">
             <Reveal
               as="article"
+              durationMs={400}
+              distancePx={20}
               className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
@@ -144,7 +146,8 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             </Reveal>
             <Reveal
               as="article"
-              delayMs={60}
+              durationMs={400}
+              distancePx={20}
               className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
             >
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
@@ -160,41 +163,43 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
         <section className="bg-white">
           <div className="mx-auto grid max-w-6xl gap-10 px-5 py-12 sm:px-6 lg:grid-cols-[1fr_320px] lg:py-16">
             <div className="space-y-10">
-              {caseStudy.sections.map((section, index) => (
-                <Reveal
-                  key={section.title}
-                  as="section"
-                  delayMs={Math.min(index * 60, 240)}
-                >
-                  <h2 className="text-2xl font-semibold text-slate-950">
-                    {section.title}
-                  </h2>
-                  <div className="mt-4 space-y-4 text-base leading-7 text-slate-600">
-                    {section.body.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
+              {caseStudy.sections.map((section) => (
+                <section key={section.title}>
+                  <Reveal durationMs={400} distancePx={20}>
+                    <h2 className="text-2xl font-semibold text-slate-950">
+                      {section.title}
+                    </h2>
+                    <div className="mt-4 space-y-4 text-base leading-7 text-slate-600">
+                      {section.body.map((paragraph) => (
+                        <p key={paragraph}>{paragraph}</p>
+                      ))}
+                    </div>
+                  </Reveal>
                   {section.images && section.images.length > 0 ? (
                     <div className="mt-6 space-y-6">
                       {section.images.map((image) => (
-                        <figure key={image.src}>
-                          <Image
+                        <Reveal
+                          key={image.src}
+                          as="figure"
+                          durationMs={400}
+                          distancePx={20}
+                        >
+                          <ZoomableImage
                             src={image.src}
                             alt={image.alt}
                             width={image.width}
                             height={image.height}
-                            className="h-auto w-full rounded-lg shadow-lg shadow-slate-950/10"
                           />
                           {image.caption ? (
                             <figcaption className="mt-2 text-sm text-slate-500">
                               {image.caption}
                             </figcaption>
                           ) : null}
-                        </figure>
+                        </Reveal>
                       ))}
                     </div>
                   ) : null}
-                </Reveal>
+                </section>
               ))}
             </div>
 

@@ -7,6 +7,8 @@ type RevealProps = {
   children: ReactNode;
   className?: string;
   delayMs?: number;
+  durationMs?: number;
+  distancePx?: number;
   as?: ElementType;
 };
 
@@ -14,6 +16,8 @@ export function Reveal({
   children,
   className,
   delayMs = 0,
+  durationMs = 300,
+  distancePx = 12,
   as: Tag = "div",
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
@@ -46,10 +50,14 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
-      style={{ transitionDelay: `${delayMs}ms` }}
+      style={{
+        transitionDelay: `${delayMs}ms`,
+        transitionDuration: `${durationMs}ms`,
+        transform: isRevealed ? "translateY(0)" : `translateY(${distancePx}px)`,
+      }}
       className={cn(
-        "transition-[opacity,transform] duration-300 ease-out",
-        isRevealed ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3",
+        "transition-[opacity,transform] ease-out",
+        isRevealed ? "opacity-100" : "opacity-0",
         className,
       )}
     >
