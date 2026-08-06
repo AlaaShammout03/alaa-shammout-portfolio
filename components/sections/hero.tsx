@@ -1,11 +1,16 @@
+import { HeroBackgroundNodeGraph } from "@/components/sections/hero-background-node-graph";
 import { LinkButton } from "@/components/ui/link-button";
 import { Reveal } from "@/components/ui/reveal";
 import { siteConfig } from "@/data/site";
 
 export function Hero() {
   return (
-    <section id="home" className="border-b border-slate-200 bg-white">
-      <Reveal className="mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-20 lg:py-24">
+    <section
+      id="home"
+      className="relative overflow-hidden border-b border-slate-200 bg-white"
+    >
+      <HeroBackgroundNodeGraph />
+      <Reveal className="relative z-10 mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-20 lg:py-24">
         <p className="max-w-2xl text-xs font-semibold uppercase tracking-normal text-teal-700 md:tracking-wide">
           Computer Engineering Graduate - American University of Sharjah
         </p>
