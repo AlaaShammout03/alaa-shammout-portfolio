@@ -25,30 +25,42 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "ev-charging-support-platform",
     challenge:
-      "The EV charging capstone for Emagine Solutions needed two separate React frontends built as one coherent product: a customer portal for reporting charging problems, and an internal operator dashboard for triaging tickets and monitoring live charger telemetry, both integrated against the same FastAPI and PostgreSQL backend.",
+      "The EV charging capstone for Emagine Solutions needed two separate React frontends built as one coherent product: a customer interface for reporting charging problems, and an internal operator dashboard for triaging tickets and monitoring live charger telemetry, both integrated against the same FastAPI and PostgreSQL backend.",
     outcome:
       "As Lead Frontend Developer, I built both apps across more than 80 REST endpoints with JWT and OTP authentication, covering AI-assisted ticket triage, predictive maintenance alerts, a fleet incident mode, and a Smart Route feature for drivers, working from weekly technical reviews with Emagine's software lead.",
     sections: [
       {
         title: "Role and scope",
         body: [
-          "I was Lead Frontend Developer on an industry-sponsored capstone for Emagine Solutions, a four-person team project running from September 2025 to May 2026 with weekly technical reviews with their software lead. I built two React and Tailwind CSS apps, a customer portal and an operator dashboard, integrated against a FastAPI and PostgreSQL backend across more than 80 REST endpoints with JWT and OTP authentication.",
+          "I was Lead Frontend Developer on an industry-sponsored capstone for Emagine Solutions, a four-person team project running from September 2025 to May 2026 with weekly technical reviews with their software lead. I built two React and Tailwind CSS apps, a customer interface and an operator dashboard, integrated against a FastAPI and PostgreSQL backend across more than 80 REST endpoints with JWT and OTP authentication.",
+        ],
+      },
+      {
+        title: "The customer interface",
+        body: [
+          "The customer interface lets drivers report a charging problem in a few fields, with AI-powered routing sending each report to the right team and a support history table to track past tickets.",
         ],
         images: [
           {
             src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/report-issue-form.png",
-            alt: "Customer portal's Report an Issue form, with an AI-routing description field over a support history table.",
+            alt: "Customer interface's Report an Issue form, with an AI-routing description field over a support history table.",
             width: 993,
             height: 640,
             caption:
-              "Customer portal: reporting a charging issue with AI-powered routing.",
+              "Customer interface: reporting a charging issue with AI-powered routing.",
           },
+        ],
+      },
+      {
+        title: "Smart Route",
+        body: [
+          "The Smart Route feature uses the Mapbox Directions API to route drivers to underused chargers based on live traffic, showing drive, wait, and charge time estimates for each option. Points-based incentives are tied to the recommendation to help shift demand away from congested stations.",
         ],
       },
       {
         title: "The operator dashboard",
         body: [
-          "The operator dashboard runs on live IoT telemetry from the charging network, surfacing AI-classified tickets with confidence scores, predictive maintenance alerts, and a fleet incident mode that triggers on threshold breach.",
+          "The operator dashboard runs on live IoT telemetry from the charging network, giving operators a real-time view of fleet status with a fleet incident mode that triggers on threshold breach.",
         ],
         images: [
           {
@@ -59,6 +71,14 @@ export const caseStudies: CaseStudy[] = [
             caption:
               "Operator dashboard: live charger telemetry, AI-classified tickets, and fleet status.",
           },
+        ],
+      },
+      {
+        title: "Ticket management",
+        body: [
+          "Tickets are AI-classified with confidence scores and triaged in a dedicated view that tracks status, priority, and assignment for every reported issue.",
+        ],
+        images: [
           {
             src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/ticket-mng.png",
             alt: "Ticket management table showing status, priority, assignee, and date columns across open, in-progress, and resolved tickets.",
@@ -67,6 +87,14 @@ export const caseStudies: CaseStudy[] = [
             caption:
               "Ticket management: status, priority, and assignment for every reported issue.",
           },
+        ],
+      },
+      {
+        title: "Predictive maintenance",
+        body: [
+          "Predictive maintenance alerts flag at-risk chargers, each scored with an AI confidence level and risk rating.",
+        ],
+        images: [
           {
             src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/predictive-alert.png",
             alt: "Predictive maintenance alert feed showing risk level and AI confidence score for each flagged charger.",
@@ -75,12 +103,6 @@ export const caseStudies: CaseStudy[] = [
             caption:
               "Predictive maintenance alerts with AI confidence scores per flagged charger.",
           },
-        ],
-      },
-      {
-        title: "Smart Route",
-        body: [
-          "The Smart Route feature uses the Mapbox Directions API to route drivers to underused chargers based on live traffic, showing drive, wait, and charge time estimates for each option. Points-based incentives are tied to the recommendation to help shift demand away from congested stations.",
         ],
       },
     ],

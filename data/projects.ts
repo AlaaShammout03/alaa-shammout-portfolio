@@ -18,7 +18,7 @@ export const projects: Project[] = [
     type: "Industry-sponsored capstone for Emagine Solutions",
     role: "Lead Frontend Developer",
     summary:
-      "A customer portal and operator dashboard for an EV charging network, built as frontend lead on a four-person capstone for Emagine Solutions. The dashboard had to turn live charger telemetry and AI-classified tickets into something an operator could act on immediately, including a fleet incident mode that fires on threshold breach.",
+      "A customer interface and operator dashboard for an EV charging network, built as frontend lead on a four-person capstone for Emagine Solutions. The dashboard had to turn live charger telemetry and AI-classified tickets into something an operator could act on immediately, including a fleet incident mode that fires on threshold breach.",
     tech: [
       "React",
       "Tailwind CSS",
