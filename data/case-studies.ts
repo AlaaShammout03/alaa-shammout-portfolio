@@ -1,8 +1,17 @@
 import { projects } from "@/data/projects";
 
+export type CaseStudyImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  caption?: string;
+};
+
 export type CaseStudySection = {
   title: string;
   body: string[];
+  images?: CaseStudyImage[];
 };
 
 export type CaseStudy = {
@@ -26,11 +35,47 @@ export const caseStudies: CaseStudy[] = [
         body: [
           "I was Lead Frontend Developer on an industry-sponsored capstone for Emagine Solutions, a four-person team project running from September 2025 to May 2026 with weekly technical reviews with their software lead. I built two React and Tailwind CSS apps, a customer portal and an operator dashboard, integrated against a FastAPI and PostgreSQL backend across more than 80 REST endpoints with JWT and OTP authentication.",
         ],
+        images: [
+          {
+            src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/report-issue-form.png",
+            alt: "Customer portal's Report an Issue form, with an AI-routing description field over a support history table.",
+            width: 993,
+            height: 640,
+            caption:
+              "Customer portal: reporting a charging issue with AI-powered routing.",
+          },
+        ],
       },
       {
         title: "The operator dashboard",
         body: [
           "The operator dashboard runs on live IoT telemetry from the charging network, surfacing AI-classified tickets with confidence scores, predictive maintenance alerts, and a fleet incident mode that triggers on threshold breach.",
+        ],
+        images: [
+          {
+            src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/op-dashboard.png",
+            alt: "Operator dashboard showing live charger telemetry, AI ticket classification stats, and fleet status broken down by online, maintenance, and offline chargers.",
+            width: 1288,
+            height: 691,
+            caption:
+              "Operator dashboard: live charger telemetry, AI-classified tickets, and fleet status.",
+          },
+          {
+            src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/ticket-mng.png",
+            alt: "Ticket management table showing status, priority, assignee, and date columns across open, in-progress, and resolved tickets.",
+            width: 1303,
+            height: 694,
+            caption:
+              "Ticket management: status, priority, and assignment for every reported issue.",
+          },
+          {
+            src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/predictive-alert.png",
+            alt: "Predictive maintenance alert feed showing risk level and AI confidence score for each flagged charger.",
+            width: 1305,
+            height: 689,
+            caption:
+              "Predictive maintenance alerts with AI confidence scores per flagged charger.",
+          },
         ],
       },
       {
@@ -41,7 +86,6 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     visualPlan: [
-      "Sanitized dashboard screenshot with generic charger and ticket labels.",
       "Workflow diagram showing customer report to operator triage to resolution.",
       "High-level architecture diagram using generic service names only.",
     ],

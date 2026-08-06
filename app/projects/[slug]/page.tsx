@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/layout/footer";
@@ -173,6 +174,26 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                       <p key={paragraph}>{paragraph}</p>
                     ))}
                   </div>
+                  {section.images && section.images.length > 0 ? (
+                    <div className="mt-6 space-y-6">
+                      {section.images.map((image) => (
+                        <figure key={image.src}>
+                          <Image
+                            src={image.src}
+                            alt={image.alt}
+                            width={image.width}
+                            height={image.height}
+                            className="h-auto w-full rounded-lg shadow-lg shadow-slate-950/10"
+                          />
+                          {image.caption ? (
+                            <figcaption className="mt-2 text-sm text-slate-500">
+                              {image.caption}
+                            </figcaption>
+                          ) : null}
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
                 </Reveal>
               ))}
             </div>
