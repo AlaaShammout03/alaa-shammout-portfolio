@@ -15,11 +15,6 @@ export function Hero() {
         <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-800 md:text-2xl md:leading-9">
           {siteConfig.positioning}
         </p>
-        <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-          I&apos;m looking for an 8-week internship in software, cloud, AI, or
-          embedded systems. I hold a UAE Golden Visa, so no sponsorship is
-          needed.
-        </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <LinkButton href="#projects" className="sm:w-fit">
             View projects
