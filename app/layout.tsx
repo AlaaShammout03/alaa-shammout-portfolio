@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     type: "website",
+    url: "/",
     title: siteConfig.title,
     description: siteConfig.description,
     siteName: siteConfig.name,
