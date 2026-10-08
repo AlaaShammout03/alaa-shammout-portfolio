@@ -29,23 +29,43 @@ export function Hero() {
         <p className="mt-5 max-w-2xl animate-rise text-lg leading-8 text-slate-800 [animation-delay:160ms] md:text-2xl md:leading-9">
           {siteConfig.positioning}
         </p>
-        <div className="mt-8 flex animate-rise flex-col gap-3 [animation-delay:240ms] sm:flex-row">
-          <LinkButton href="#projects" icon="down" className="sm:w-fit">
-            View projects
-          </LinkButton>
-          <LinkButton href="#resume" variant="secondary" className="sm:w-fit">
-            Resume
+        <div className="mt-8 flex animate-rise flex-col gap-3 [animation-delay:240ms] sm:flex-row sm:flex-wrap sm:items-center">
+          <LinkButton
+            href={siteConfig.resumeUrl}
+            download
+            icon="down"
+            className="sm:w-fit"
+          >
+            Download resume
           </LinkButton>
           <LinkButton
-            href={siteConfig.githubUrl}
-            variant="ghost"
-            icon="external"
+            href="#experience"
+            variant="secondary"
+            icon="down"
             className="sm:w-fit"
-            target="_blank"
-            rel="noreferrer"
           >
-            GitHub
+            See my work
           </LinkButton>
+          <div className="flex gap-1">
+            <LinkButton
+              href={siteConfig.githubUrl}
+              variant="ghost"
+              icon="external"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </LinkButton>
+            <LinkButton
+              href={siteConfig.linkedinUrl}
+              variant="ghost"
+              icon="external"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </LinkButton>
+          </div>
         </div>
         <p className="mt-8 flex animate-rise items-center gap-2.5 text-sm text-slate-600 [animation-delay:320ms]">
           <span aria-hidden="true" className="relative flex h-2 w-2">
