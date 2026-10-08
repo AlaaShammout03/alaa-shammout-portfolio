@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/data/site";
 
-export const alt = "Alaa Shammout computer engineering portfolio";
+export const alt = "Alaa Shammout, software engineer";
 export const size = {
   width: 1200,
   height: 630,
@@ -43,7 +43,7 @@ export default function Image() {
               textTransform: "uppercase",
             }}
           >
-            Computer Engineering Portfolio
+            Software Engineer · AUS ’26
           </div>
           <div
             style={{

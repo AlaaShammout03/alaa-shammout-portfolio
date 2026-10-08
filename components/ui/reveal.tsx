@@ -50,13 +50,14 @@ export function Reveal({
   return (
     <Tag
       ref={ref}
+      data-revealed={isRevealed}
       style={{
         transitionDelay: `${delayMs}ms`,
         transitionDuration: `${durationMs}ms`,
         transform: isRevealed ? "translateY(0)" : `translateY(${distancePx}px)`,
       }}
       className={cn(
-        "transition-[opacity,transform] ease-out",
+        "group/reveal transition-[opacity,transform] ease-out",
         isRevealed ? "opacity-100" : "opacity-0",
         className,
       )}

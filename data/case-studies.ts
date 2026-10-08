@@ -38,16 +38,16 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "The customer interface",
         body: [
-          "The customer interface lets drivers report a charging problem in a few fields, with AI-powered routing sending each report to the right team and a support history table to track past tickets.",
+          "The customer interface lets drivers report a charging problem in a few fields. AI routing sends each report to the right team, and a support history table tracks past tickets.",
         ],
         images: [
           {
             src: "https://raw.githubusercontent.com/AlaaShammout03/ev-charging-support-platform-case-study/main/assets/screenshots/report-issue-form.png",
-            alt: "Customer interface's Report an Issue form, with an AI-routing description field over a support history table.",
+            alt: "Customer interface's Report an Issue form, with a description field for AI routing above a support history table.",
             width: 993,
             height: 640,
             caption:
-              "Customer interface: reporting a charging issue with AI-powered routing.",
+              "Customer interface: reporting a charging issue, routed by AI.",
           },
         ],
       },
@@ -60,7 +60,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "The operator dashboard",
         body: [
-          "The operator dashboard runs on live IoT telemetry from the charging network, giving operators a real-time view of fleet status with a fleet incident mode that triggers on threshold breach.",
+          "The operator dashboard runs on live IoT telemetry from the charging network, giving operators a live view of fleet status with a fleet incident mode that triggers on threshold breach.",
         ],
         images: [
           {
@@ -110,7 +110,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "urbanspace-booking-service",
     challenge:
-      "A booking microservice for a shared urban-resource platform needs to guarantee that a reservation slot can only be confirmed once, even when two requests for that slot arrive at nearly the same time.",
+      "A booking microservice for a platform that books shared urban resources needs to guarantee that a reservation slot can only be confirmed once, even when two requests for that slot arrive at nearly the same time.",
     outcome:
       "The service enforces booking rules and slot exclusivity across eight REST endpoints, with conflict handling backed by PostgreSQL advisory locks after application-level checks alone proved insufficient, deployed to Azure App Service.",
     sections: [
@@ -146,14 +146,14 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Tracing the flat loss",
         body: [
-          "Validation MAE wasn't moving across epochs, and the loss printed as suspiciously small from epoch 1, consistently around 1e-4. The model clearly wasn't predicting correctly, so I visualized the predicted density maps and they came back almost blank, near zero everywhere.",
-          "Checking the actual ground-truth density values explained why: they were around 0.05 per pixel. The loss looked small only because the targets were tiny, not because the model had learned anything. The fix, rescaling density values by 100x along with gradient clipping, was the first thing tried once the root cause was clear, and it resolved the issue directly.",
+          "Validation MAE wasn't moving across epochs, and the loss printed as suspiciously small from epoch 1. The model clearly wasn't predicting correctly, so I visualized the predicted density maps and they came back almost blank, near zero everywhere.",
+          "Checking the actual ground-truth density values explained why: they were near 1e-4 per pixel, small enough to collapse the MSE loss. The loss looked small only because the targets were tiny, not because the model had learned anything. The fix, rescaling density values by 100x along with gradient clipping, was the first thing tried once the root cause was clear, and it resolved the issue directly.",
         ],
       },
       {
         title: "Choosing a learning rate schedule",
         body: [
-          "The first schedule I tried was ReduceLROnPlateau, which lowers the learning rate automatically once validation loss stops improving, the more adaptive-seeming option. But the Part A validation set is only 60 images, so a handful of noisy images could swing the aggregate metric enough to trigger a reduction too early, killing the learning rate before the model had actually plateaued.",
+          "The first schedule I tried was ReduceLROnPlateau, which lowers the learning rate automatically once validation loss stops improving and seemed like the more adaptive option. But the Part A validation set is only 60 images, so a handful of noisy images could swing the aggregate metric enough to trigger a reduction too early, killing the learning rate before the model had actually plateaued.",
           "I switched to StepLR with a fixed decay every 30 epochs instead. It ignores validation noise and decays on a set schedule, which mattered more here than reacting adaptively to a metric that wasn't reliable at that sample size.",
         ],
       },
@@ -169,7 +169,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "freertos-esp32-escape-room-game",
     challenge:
-      "A three-stage escape-room game on ESP32 needed its input, game logic, and display code running as independent, differently-timed tasks, all reading and writing the same shared game state, score, timer, and game status, without corrupting it.",
+      "A three-stage escape-room game on ESP32 needed its input, game logic, and display code running as independent tasks at different rates, all reading and writing the same shared game state, score, timer, and game status, without corrupting it.",
     outcome:
       "The game runs as three FreeRTOS tasks, logic at 20ms, input at 30ms, and display at 100ms, synchronized through a single mutex over the shared game state, with the full three-stage state machine validated in the Wokwi simulator.",
     sections: [
@@ -199,7 +199,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: "Role and scope",
         body: [
-          "I was one of three people on this Wireless and Mobile Networks team project. My contributions were the Python-based simulation, helping implement the node selection heuristic, evaluating coverage, redundancy, energy consumption, active node count, and sink connectivity, running the trials across multiple node counts, and contributing to the result analysis, visualization, and the final IEEE-style report. Most of it was worked on together rather than split into separately owned pieces.",
+          "I was one of three people on this Wireless and Mobile Networks team project. My contributions were the Python simulation, helping implement the node selection heuristic, evaluating coverage, redundancy, energy consumption, active node count, and sink connectivity, running the trials across multiple node counts, and contributing to the result analysis, visualization, and the final IEEE-style report. Most of it was worked on together rather than split into separately owned pieces.",
         ],
       },
       {

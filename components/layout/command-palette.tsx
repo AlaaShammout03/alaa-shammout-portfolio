@@ -152,11 +152,11 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       role="dialog"
       aria-modal="true"
       aria-label="Command palette"
-      className="fixed inset-0 z-[100] flex items-start justify-center bg-slate-950/60 px-4 pt-[15vh] backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex animate-fade-in items-start justify-center bg-slate-950/60 px-4 pt-[15vh] backdrop-blur-sm"
       onClick={close}
     >
       <div
-        className="w-full max-w-lg overflow-hidden rounded-xl border border-slate-800 bg-slate-900/95 shadow-2xl shadow-black/40 backdrop-blur-xl"
+        className="w-full max-w-lg animate-pop overflow-hidden rounded-xl border border-slate-800 bg-slate-900/95 shadow-2xl shadow-black/40 backdrop-blur-xl"
         onClick={(event) => event.stopPropagation()}
       >
         <div className="flex items-center gap-3 border-b border-slate-800 px-4">

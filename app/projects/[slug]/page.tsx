@@ -29,7 +29,7 @@ export async function generateMetadata({
 
   if (!caseStudy) {
     return {
-      title: "Project Not Found | Alaa Shammout",
+      title: "Project not found",
     };
   }
 
@@ -45,7 +45,7 @@ export async function generateMetadata({
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "Alaa Shammout computer engineering portfolio",
+          alt: "Alaa Shammout, software engineer",
         },
       ],
     },
@@ -77,9 +77,14 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
             <div className="flex flex-wrap items-center gap-x-4 gap-y-2 border-b border-slate-200 pb-6 text-sm">
               <Link
                 href="/#projects"
-                className="link-underline inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                className="link-underline group/link inline-flex items-center gap-1.5 font-medium text-slate-500 transition hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
               >
-                <span aria-hidden="true">&larr;</span>
+                <span
+                  aria-hidden="true"
+                  className="inline-block transition-transform duration-200 group-hover/link:-translate-x-0.5"
+                >
+                  &larr;
+                </span>
                 Back to projects
               </Link>
               {project.repoUrl ? (
@@ -91,10 +96,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                     href={project.repoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline inline-flex items-center gap-1.5 font-medium text-teal-700 transition hover:text-teal-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
+                    className="link-underline group/link inline-flex items-center gap-1.5 font-medium text-teal-700 transition hover:text-teal-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700"
                   >
                     {project.repoLabel ?? "View source"}
-                    <span aria-hidden="true">&#8599;</span>
+                    <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5">
+                      &#8599;
+                    </span>
                   </a>
                 </>
               ) : null}
@@ -135,8 +142,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               as="article"
               durationMs={400}
               distancePx={20}
-              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
+              className="group/card relative overflow-hidden rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
             >
+              <span
+                aria-hidden="true"
+                className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-teal-700 transition-transform duration-300 ease-out-soft group-hover/card:scale-y-100"
+              />
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                 Challenge
               </p>
@@ -148,8 +159,12 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
               as="article"
               durationMs={400}
               distancePx={20}
-              className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
+              className="group/card relative overflow-hidden rounded-lg border border-slate-200 bg-white p-6 shadow-sm shadow-slate-950/[0.03]"
             >
+              <span
+                aria-hidden="true"
+                className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-teal-700 transition-transform duration-300 ease-out-soft group-hover/card:scale-y-100"
+              />
               <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
                 Outcome
               </p>

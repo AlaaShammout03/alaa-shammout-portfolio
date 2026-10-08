@@ -24,20 +24,20 @@ export const projects: Project[] = [
       "Tailwind CSS",
       "REST APIs",
       "FastAPI integration",
-      "PostgreSQL-backed APIs",
+      "PostgreSQL",
       "Mapbox Directions API",
       "AI/ML outputs",
     ],
     highlights: [],
     privacyNote:
-      "Private company-sponsored work for Emagine Solutions. Public portfolio content must use sanitized screenshots and omit private code, real tickets, charger identifiers, and API details.",
+      "Private work sponsored by Emagine Solutions. Screenshots are sanitized, and the code, real tickets, charger identifiers, and API details are not public.",
   },
   {
     slug: "urbanspace-booking-service",
     title: "Cloud-Native Booking Microservice",
     type: "Cloud/backend project",
     summary:
-      "A Spring Boot booking microservice for a shared urban-resource platform, one of four services in a four-person team project. Two overlapping bookings for the same slot both got confirmed during testing, which meant application-level checks alone weren't enough to stop a double booking.",
+      "A Spring Boot booking microservice for a platform that books shared urban resources, one of four services in a four-person team project. Two overlapping bookings for the same slot both got confirmed during testing, which meant application-level checks alone weren't enough to stop a double booking.",
     tech: [
       "Java",
       "Spring Boot",

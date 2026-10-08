@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/sections/project-card";
+import { ProjectIndex } from "@/components/sections/project-index";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionShell } from "@/components/ui/section-shell";
 import { projects } from "@/data/projects";
@@ -7,8 +8,9 @@ export function FeaturedProjects() {
   return (
     <SectionShell
       id="projects"
-      eyebrow="Featured work"
-      title="Selected projects across software, embedded systems, AI, and simulation"
+      eyebrow="Projects"
+      title="Five team projects at AUS"
+      aside={<ProjectIndex />}
       stickyHeading
     >
       <div className="grid gap-4 lg:grid-cols-2">

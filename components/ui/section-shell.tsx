@@ -6,6 +6,7 @@ type SectionShellProps = {
   eyebrow: string;
   title: string;
   children: ReactNode;
+  aside?: ReactNode;
   tone?: "white" | "muted";
   stickyHeading?: boolean;
 };
@@ -15,6 +16,7 @@ export function SectionShell({
   eyebrow,
   title,
   children,
+  aside,
   tone = "muted",
   stickyHeading = false,
 }: SectionShellProps) {
@@ -31,12 +33,17 @@ export function SectionShell({
             stickyHeading ? "lg:sticky lg:top-24 lg:self-start" : undefined
           }
         >
-          <p className="text-xs font-semibold uppercase tracking-wide text-teal-700">
+          <p className="flex items-center gap-2.5 text-xs font-semibold uppercase tracking-wide text-teal-700">
+            <span
+              aria-hidden="true"
+              className="h-px w-6 origin-left scale-x-0 bg-teal-700 transition-transform delay-150 duration-500 ease-out-soft group-data-[revealed=true]/reveal:scale-x-100"
+            />
             {eyebrow}
           </p>
           <h2 className="mt-3 max-w-sm text-2xl font-semibold leading-tight text-slate-950 sm:text-3xl">
             {title}
           </h2>
+          {aside}
         </Reveal>
         <Reveal>{children}</Reveal>
       </div>

@@ -1,10 +1,10 @@
 export const siteConfig = {
   name: "Alaa Shammout",
-  title: "Alaa Shammout | Computer Engineering Portfolio",
+  title: "Alaa Shammout | Software Engineer",
   description:
-    "Portfolio of Alaa Shammout, a Computer Engineering graduate from the American University of Sharjah, building software from React and Spring Boot to FreeRTOS on bare ESP32 hardware.",
+    "Alaa Shammout, a software engineer and 2026 Computer Engineering graduate of the American University of Sharjah, working in React, Next.js, TypeScript, Spring Boot, FastAPI, and Azure.",
   positioning:
-    "I build across the stack most people split into two careers: React and Spring Boot on one end, FreeRTOS tasks on bare ESP32 hardware on the other.",
+    "Most recently, I built the 19-page WattsWhere website for an EV charging company, from the CEO's Figma design to production, plus a control panel that lets non-technical staff edit it without a developer.",
   email: "alaashammout03@gmail.com",
   githubUrl: "https://github.com/AlaaShammout03/",
   linkedinUrl: "https://www.linkedin.com/in/alaa-shammout03/",

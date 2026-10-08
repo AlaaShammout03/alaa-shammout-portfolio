@@ -8,20 +8,26 @@ export function Resume() {
     <SectionShell
       id="resume"
       eyebrow="Resume"
-      title="Download the resume"
+      title="One page, updated October 2026"
       tone="white"
     >
       <Card className="p-6">
         <p className="max-w-2xl text-base leading-7 text-slate-600">
-          Download a current PDF resume directly from the site, then use the
-          contact links below to review GitHub, LinkedIn, or send a message.
+          The Emagine internship, the permit automation at Sarmeen, and the
+          EV charging, booking microservice, and CSRNet projects, as a PDF.
         </p>
         <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-          <LinkButton href={siteConfig.resumeUrl} download>
+          <LinkButton href={siteConfig.resumeUrl} download icon="down">
             Download resume
           </LinkButton>
-          <LinkButton href="#contact" variant="secondary">
-            Go to Contact
+          <LinkButton
+            href={siteConfig.resumeUrl}
+            variant="secondary"
+            icon="external"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Open in browser
           </LinkButton>
         </div>
       </Card>

@@ -12,7 +12,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
   const hasCaseStudy = caseStudySlugs.includes(project.slug);
 
   return (
-    <Card className="flex h-full flex-col transition-[transform,box-shadow] duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-slate-950/10">
+    <Card
+      id={`project-${project.slug}`}
+      className="group/card relative flex h-full scroll-mt-24 flex-col overflow-hidden transition-[transform,box-shadow,border-color] duration-200 hover:-translate-y-0.5 hover:border-teal-200 hover:shadow-lg hover:shadow-slate-950/10"
+    >
+      <span
+        aria-hidden="true"
+        className="absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-teal-700 transition-transform duration-300 ease-out-soft group-focus-within/card:scale-x-100 group-hover/card:scale-x-100"
+      />
       <div>
         <p className="text-sm font-medium text-teal-700">{project.type}</p>
         <h3 className="mt-2 break-words text-xl font-semibold leading-7 text-slate-950">
@@ -64,6 +71,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <LinkButton
               href={`/projects/${project.slug}`}
               variant="secondary"
+              icon="arrow"
               className="w-full sm:w-fit"
             >
               Read case study
@@ -74,10 +82,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2"
+              className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-teal-700 underline-offset-4 transition hover:text-teal-900 hover:underline hover:decoration-2"
             >
               {project.repoLabel ?? "View source"}
-              <span aria-hidden="true">&#8599;</span>
+              <span aria-hidden="true" className="inline-block transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5">
+                &#8599;
+              </span>
             </a>
           ) : null}
         </div>
