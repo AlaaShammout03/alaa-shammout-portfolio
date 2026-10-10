@@ -9,67 +9,72 @@ export const size = {
 };
 export const contentType = "image/png";
 
+// Chat apps show this image small, so it carries few words at large sizes.
+// The page title and description appear under it and hold the detail.
 export default function Image() {
   return new ImageResponse(
     (
       <div
         style={{
-          alignItems: "center",
           background: "#f8fafc",
           color: "#0f172a",
           display: "flex",
           height: "100%",
-          justifyContent: "center",
-          padding: "72px",
           width: "100%",
         }}
       >
+        <div style={{ background: "#0f766e", display: "flex", width: "14px" }} />
         <div
           style={{
-            border: "1px solid #cbd5e1",
-            borderRadius: "18px",
             display: "flex",
+            flex: 1,
             flexDirection: "column",
-            gap: "28px",
-            padding: "56px",
-            width: "100%",
+            justifyContent: "space-between",
+            padding: "72px 88px 64px",
           }}
         >
+          <Logo size={36} />
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                fontSize: "124px",
+                letterSpacing: "-0.03em",
+                lineHeight: 1,
+                // The bundled font has one weight; the stroke makes it bold.
+                WebkitTextStroke: "2.5px #0f172a",
+              }}
+            >
+              {siteConfig.name}
+            </div>
+            <div
+              style={{
+                color: "#334155",
+                fontSize: "52px",
+                marginTop: "28px",
+              }}
+            >
+              Software Engineer · Dubai, UAE
+            </div>
+            <div
+              style={{
+                color: "#0f766e",
+                fontSize: "34px",
+                marginTop: "18px",
+              }}
+            >
+              React · Next.js · TypeScript · Spring Boot · FastAPI
+            </div>
+          </div>
           <div
             style={{
-              alignItems: "center",
-              color: "#0f766e",
+              borderTop: "2px solid #e2e8f0",
+              color: "#64748b",
               display: "flex",
-              fontSize: "28px",
-              fontWeight: 700,
-              gap: "20px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
+              fontSize: "30px",
+              paddingTop: "28px",
             }}
           >
-            <Logo size={30} />
-            Software Engineer · AUS ’26
-          </div>
-          <div
-            style={{
-              fontSize: "82px",
-              fontWeight: 800,
-              letterSpacing: "-0.02em",
-              lineHeight: 1,
-            }}
-          >
-            {siteConfig.name}
-          </div>
-          <div
-            style={{
-              color: "#334155",
-              fontSize: "40px",
-              fontWeight: 500,
-              lineHeight: 1.25,
-              maxWidth: "900px",
-            }}
-          >
-            {siteConfig.positioning}
+            alaa-shammout-portfolio.vercel.app
           </div>
         </div>
       </div>
