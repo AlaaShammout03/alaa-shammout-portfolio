@@ -1,3 +1,4 @@
+import { Logo } from "@/components/ui/logo";
 import { siteConfig } from "@/data/site";
 
 export function Footer() {
@@ -5,7 +6,10 @@ export function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-8 text-sm text-slate-600 sm:px-6 md:flex-row md:items-center md:justify-between">
         <div>
-          <p className="font-semibold text-slate-950">{siteConfig.name}</p>
+          <p className="flex items-center gap-2.5 font-semibold text-slate-950">
+            <Logo size={13} />
+            {siteConfig.name}
+          </p>
           <p className="mt-1">© 2026 {siteConfig.name}</p>
         </div>
         <div className="flex flex-col gap-2 md:items-end">

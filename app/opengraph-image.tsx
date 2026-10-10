@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { Logo } from "@/components/ui/logo";
 import { siteConfig } from "@/data/site";
 
 export const alt = "Alaa Shammout, software engineer";
@@ -36,13 +37,17 @@ export default function Image() {
         >
           <div
             style={{
+              alignItems: "center",
               color: "#0f766e",
+              display: "flex",
               fontSize: "28px",
               fontWeight: 700,
+              gap: "20px",
               letterSpacing: "0.08em",
               textTransform: "uppercase",
             }}
           >
+            <Logo size={30} />
             Software Engineer · AUS ’26
           </div>
           <div

@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CommandPalette } from "@/components/layout/command-palette";
+import { Logo } from "@/components/ui/logo";
 import { useActiveSection } from "@/lib/use-active-section";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/data/site";
@@ -43,8 +44,9 @@ export function Navbar() {
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-2 sm:px-6 md:flex-row md:items-center md:justify-between md:gap-3 md:py-3">
           <Link
             href="/#home"
-            className="w-fit rounded-md text-base font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
+            className="group/logo flex w-fit items-center gap-2.5 rounded-md text-base font-semibold text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700"
           >
+            <Logo size={14} />
             {siteConfig.name}
           </Link>
           <nav
