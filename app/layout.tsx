@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import { CustomCursor } from "@/components/layout/custom-cursor";
 import { getSiteUrl, siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -70,6 +71,7 @@ export default function RootLayout({
           Skip to content
         </a>
         {children}
+        <CustomCursor />
       </body>
     </html>
   );
