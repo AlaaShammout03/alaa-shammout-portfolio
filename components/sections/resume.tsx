@@ -8,7 +8,7 @@ export function Resume() {
     <SectionShell
       id="resume"
       eyebrow="Resume"
-      title="One page, updated October 2026"
+      title="One page, updated November 2026"
       tone="white"
     >
       <Card className="p-6">

@@ -41,7 +41,15 @@ const skillGroups = [
   },
   {
     title: "AI and simulation",
-    items: ["PyTorch", "OpenCV", "NumPy", "pandas", "Matplotlib"],
+    items: [
+      "AI Agent Development",
+      "MCP",
+      "PyTorch",
+      "OpenCV",
+      "NumPy",
+      "pandas",
+      "Matplotlib",
+    ],
   },
   {
     title: "Tools",
