@@ -12,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       priority: 1,
     },
+    {
+      url: `${siteUrl}/resume`,
+      lastModified: now,
+      priority: 0.9,
+    },
     ...caseStudySlugs.map((slug) => ({
       url: `${siteUrl}/projects/${slug}`,
       lastModified: now,

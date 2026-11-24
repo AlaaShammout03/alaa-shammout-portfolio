@@ -10,6 +10,11 @@ const contactItems = [
     href: `mailto:${siteConfig.email}`,
   },
   {
+    label: "Phone",
+    value: siteConfig.phone,
+    href: `tel:${siteConfig.phone.replaceAll(" ", "")}`,
+  },
+  {
     label: "GitHub",
     value: "github.com/AlaaShammout03",
     href: siteConfig.githubUrl,
@@ -36,12 +41,15 @@ export function Contact() {
           reach me.
         </p>
         <div className="mt-6 divide-y divide-slate-200 border-y border-slate-200">
-          {contactItems.map((item) => (
+          {contactItems.map((item) => {
+            const isExternal = item.href.startsWith("https:");
+
+            return (
             <a
               key={item.label}
               href={item.href}
-              target={item.href.startsWith("mailto:") ? undefined : "_blank"}
-              rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+              target={isExternal ? "_blank" : undefined}
+              rel={isExternal ? "noreferrer" : undefined}
               className="group flex flex-col gap-1 rounded-sm py-3 transition-colors hover:bg-slate-50/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
             >
               <span className="text-sm font-semibold text-slate-950 transition group-hover:text-teal-800 group-hover:underline">
@@ -53,16 +61,17 @@ export function Contact() {
                   aria-hidden="true"
                   className={cn(
                     "inline-block text-slate-400 transition-[transform,color] duration-200 group-hover:text-teal-700",
-                    item.href.startsWith("mailto:")
-                      ? "group-hover:translate-x-0.5"
-                      : "group-hover:-translate-y-0.5 group-hover:translate-x-0.5",
+                    isExternal
+                      ? "group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                      : "group-hover:translate-x-0.5",
                   )}
                 >
-                  {item.href.startsWith("mailto:") ? "→" : "↗"}
+                  {isExternal ? "↗" : "→"}
                 </span>
               </span>
             </a>
-          ))}
+            );
+          })}
         </div>
       </Card>
     </SectionShell>

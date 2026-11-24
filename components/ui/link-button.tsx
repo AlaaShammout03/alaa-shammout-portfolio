@@ -24,6 +24,17 @@ const icons = {
   },
 };
 
+export function buttonClassName(
+  variant: keyof typeof variants = "primary",
+  className?: string,
+) {
+  return cn(
+    "group/btn inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-semibold transition duration-200 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700",
+    variants[variant],
+    className,
+  );
+}
+
 export function LinkButton({
   children,
   className,
@@ -32,14 +43,7 @@ export function LinkButton({
   ...props
 }: LinkButtonProps) {
   return (
-    <a
-      className={cn(
-        "group/btn inline-flex h-11 items-center justify-center gap-2 rounded-md px-5 text-sm font-semibold transition duration-200 active:scale-[0.98] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700",
-        variants[variant],
-        className,
-      )}
-      {...props}
-    >
+    <a className={buttonClassName(variant, className)} {...props}>
       {children}
       {icon ? (
         <span

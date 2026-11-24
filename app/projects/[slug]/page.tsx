@@ -45,7 +45,7 @@ export async function generateMetadata({
           url: "/opengraph-image",
           width: 1200,
           height: 630,
-          alt: "Alaa Shammout, software engineer",
+          alt: "Alaa Shammout, full stack developer",
         },
       ],
     },

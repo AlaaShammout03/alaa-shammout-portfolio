@@ -21,7 +21,7 @@ export function Hero() {
       <div className="relative z-10 mx-auto max-w-3xl px-5 py-16 sm:px-6 sm:py-20 lg:py-24">
         <p className="flex max-w-2xl animate-rise items-center gap-2.5 text-xs font-semibold uppercase tracking-normal text-teal-700 md:tracking-wide">
           <span aria-hidden="true" className="h-px w-6 bg-teal-700" />
-          Software Engineer · Computer Engineering, AUS ’26
+          Full Stack Developer · Computer Engineering, AUS ’26
         </p>
         <h1 className="mt-5 max-w-3xl animate-rise text-4xl font-semibold leading-tight text-slate-950 [animation-delay:80ms] sm:text-5xl lg:text-6xl">
           Alaa Shammout
@@ -30,13 +30,8 @@ export function Hero() {
           {siteConfig.positioning}
         </p>
         <div className="mt-8 flex animate-rise flex-col gap-3 [animation-delay:240ms] sm:flex-row sm:flex-wrap sm:items-center">
-          <LinkButton
-            href={siteConfig.resumeUrl}
-            download
-            icon="down"
-            className="sm:w-fit"
-          >
-            Download resume
+          <LinkButton href="/resume" icon="arrow" className="sm:w-fit">
+            View resume
           </LinkButton>
           <LinkButton
             href="#experience"

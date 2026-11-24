@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { Logo } from "@/components/ui/logo";
 import { siteConfig } from "@/data/site";
 
-export const alt = "Alaa Shammout, software engineer";
+export const alt = "Alaa Shammout, full stack developer";
 export const size = {
   width: 1200,
   height: 630,
@@ -53,7 +53,7 @@ export default function Image() {
                 marginTop: "28px",
               }}
             >
-              Software Engineer · Dubai, UAE
+              Full Stack Developer · Dubai, UAE
             </div>
             <div
               style={{

@@ -2,22 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CommandPalette } from "@/components/layout/command-palette";
 import { Logo } from "@/components/ui/logo";
 import { useActiveSection } from "@/lib/use-active-section";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/data/site";
 
+// `id` is the home page section each link tracks while scrolling. Resume
+// links to its own page but still lights up over the home page's resume card.
 const navItems = [
-  { label: "Experience", href: "/#experience" },
-  { label: "Projects", href: "/#projects" },
-  { label: "Resume", href: "/#resume" },
-  { label: "Contact", href: "/#contact" },
+  { label: "Experience", href: "/#experience", id: "experience" },
+  { label: "Projects", href: "/#projects", id: "projects" },
+  { label: "Resume", href: "/resume", id: "resume" },
+  { label: "Contact", href: "/#contact", id: "contact" },
 ];
 
-const sectionIds = navItems.map((item) => item.href.replace("/#", ""));
+const sectionIds = navItems.map((item) => item.id);
 
 export function Navbar() {
+  const pathname = usePathname();
   const activeId = useActiveSection(sectionIds);
   const [isPaletteOpen, setIsPaletteOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -54,14 +58,16 @@ export function Navbar() {
             className="-mx-2 flex items-center gap-1 overflow-x-auto px-2 text-sm md:mx-0 md:flex-wrap md:justify-end md:overflow-visible md:px-0"
           >
             {navItems.map((item) => {
-              const id = item.href.replace("/#", "");
-              const isActive = id === activeId;
+              const isCurrentPage = pathname === item.href;
+              const isActive = isCurrentPage || item.id === activeId;
 
               return (
                 <Link
                   key={item.href}
                   href={item.href}
-                  aria-current={isActive ? "location" : undefined}
+                  aria-current={
+                    isCurrentPage ? "page" : isActive ? "location" : undefined
+                  }
                   className={cn(
                     "relative whitespace-nowrap rounded-md px-3 py-2 transition after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:origin-left after:scale-x-0 after:rounded-full after:bg-current after:transition-transform after:duration-300 after:content-[''] hover:bg-slate-100 hover:after:scale-x-100 hover:text-slate-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-700",
                     isActive

@@ -1,11 +1,12 @@
 export const siteConfig = {
   name: "Alaa Shammout",
-  title: "Alaa Shammout | Software Engineer",
+  title: "Alaa Shammout | Full Stack Developer",
   description:
-    "Alaa Shammout, a software engineer and 2026 Computer Engineering graduate of the American University of Sharjah, working in React, Next.js, TypeScript, Spring Boot, FastAPI, and Azure.",
+    "Alaa Shammout, a full stack developer and 2026 Computer Engineering graduate of the American University of Sharjah, working in React, Next.js, TypeScript, Spring Boot, FastAPI, and Azure.",
   positioning:
     "Most recently, I built the 19-page WattsWhere website for an EV charging company, from the CEO's Figma design to production, plus a control panel that lets non-technical staff edit it without a developer.",
   email: "alaashammout03@gmail.com",
+  phone: "+971 50 759 3999",
   githubUrl: "https://github.com/AlaaShammout03/",
   linkedinUrl: "https://www.linkedin.com/in/alaa-shammout03/",
   resumeUrl: "/resume/alaa-shammout-resume.pdf",

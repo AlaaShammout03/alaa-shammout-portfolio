@@ -54,6 +54,11 @@ export function CommandPalette({ open, onOpenChange }: CommandPaletteProps) {
       perform: () => router.push("/#projects"),
     },
     {
+      id: "view-resume",
+      label: "Navigation: View Resume",
+      perform: () => router.push("/resume"),
+    },
+    {
       id: "download-resume",
       label: "Action: Download Resume",
       perform: downloadResume,
